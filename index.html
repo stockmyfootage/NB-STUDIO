@@ -3,51 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>terms of service | narrabrain.io</title>
+    <title>narrabrain.studio | agentic synthesis</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Geist+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Geist+Mono&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #06b6d4; --bg: #000; }
-        body { background: var(--bg); color: #a1a1aa; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        :root { --accent: #06b6d4; --bg: #000000; }
+        body { color: #a1a1aa; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; background: var(--bg); }
         .mono { font-family: 'Geist Mono', monospace; }
+        .brand-text { font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: -0.05em; color: white; }
+        .flow-line { width: 1px; height: 70px; background: linear-gradient(180deg, var(--accent), transparent); margin: 0 auto; }
+        .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; margin: 0 auto; box-shadow: 0 0 15px var(--accent); }
+        .bg-mesh {
+            background-image: radial-gradient(at 15% 0%, rgba(6, 182, 212, 0.1) 0, transparent 40%), radial-gradient(at 85% 100%, rgba(59, 130, 246, 0.08) 0, transparent 40%);
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover { border-color: rgba(6, 182, 212, 0.4); }
+        @keyframes flow-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.9; } }
+        .animate-flow { animation: flow-pulse 4s infinite; }
     </style>
 </head>
-<body class="p-8 md:p-24">
-    <div class="max-w-3xl mx-auto">
-        <nav class="mb-16">
-            <a href="/" class="text-cyan-500 mono text-xs uppercase tracking-widest hover:text-white transition-colors">← back to narrabrain.io</a>
-        </nav>
+<body class="bg-mesh">
 
-        <header class="mb-20">
-            <h1 class="text-white text-4xl font-medium tracking-tighter mb-4 lowercase">terms of service</h1>
-            <p class="mono text-[10px] text-zinc-600 uppercase tracking-[0.3em]">Intermediary Guidelines (India) | Updated May 2026</p>
-        </header>
+    <nav class="fixed top-0 w-full z-50 p-6 md:px-12 flex justify-between items-center backdrop-blur-md border-b border-white/10">
+        <div class="brand-text text-xl lowercase">narrabrain.studio</div>
+        <div class="glass-card px-5 py-2 rounded-full mono text-xs tracking-[0.2em] uppercase text-cyan-400 font-bold">stealth mode</div>
+    </nav>
 
-        <div class="space-y-16 text-sm md:text-base leading-relaxed font-light">
-            <section>
-                <h2 class="text-white font-medium mb-4 uppercase text-xs tracking-widest mono">1. Acceptance of Terms</h2>
-                <p>By accessing narrabrain.io, you agree to these terms issued by Vibhav Nigam (Founder, Narrabrain Labs — Incorporation in Progress). Global contributors are protected under the liability limitations stated herein.</p>
-            </section>
+    <main class="pt-48 pb-20 px-6">
+        
+        <section class="max-w-4xl mx-auto text-center mb-16">
+            <img src="NB.png" alt="Logo" class="w-48 mx-auto mb-12 opacity-90">
+            <h1 class="text-white text-5xl md:text-7xl font-medium tracking-tighter leading-tight mb-8">
+                Curing <span class="text-cyan-400 italic">Production Friction</span>.
+            </h1>
+            <p class="text-zinc-400 text-xl md:text-2xl font-light max-w-2xl mx-auto leading-relaxed">
+                An agentic orchestration layer for high-fidelity synthesis via modified open-source cinematic backends.
+            </p>
+        </section>
 
-            <section>
-                <h2 class="text-white font-medium mb-4 uppercase text-xs tracking-widest mono">2. Affiliate Revenue Model</h2>
-                <p>narrabrain.io receives referral commissions (typically 20%) for asset purchases initiated via our platform on Partner libraries. We do not license content directly.</p>
-            </section>
+        <div class="dot animate-flow"></div>
+        <div class="flow-line animate-flow"></div>
 
-            <section>
-                <h2 class="text-white font-medium mb-4 uppercase text-xs tracking-widest mono">3. Intermediary Status (IT Rules 2026)</h2>
-                <p>We maintain a 3-hour response window for government-mandated takedowns of flagged content.</p>
-            </section>
+        <section class="max-w-3xl mx-auto mb-8">
+            <div class="glass-card p-10 md:p-12 rounded-[40px] text-center">
+                <span class="mono text-xs text-cyan-500 uppercase tracking-widest block mb-6">Stage 01: Intent Orchestration</span>
+                <div class="bg-black/60 border border-zinc-800 p-6 rounded-2xl mb-8 text-base md:text-lg italic text-zinc-400 font-light">
+                    "Open with a tracking shot of the protagonist, maintain 50mm depth of field, sunset lighting."
+                </div>
+                <h3 class="text-white text-2xl font-medium mb-3">Directorial Input Parsing</h3>
+                <p class="text-sm md:text-base text-zinc-500 leading-relaxed">Translating narrative vision into deterministic camera and lighting vectors.</p>
+            </div>
+        </section>
 
-            <section class="border border-white/10 p-8 rounded-2xl">
-                <h2 class="text-white font-medium mb-4 uppercase text-xs tracking-widest mono">4. Grievance Redressal</h2>
-                <p class="text-white text-xs">Grievance Officer: Vibhav Nigam<br>Email: info@narrabrain.io<br>Subject: [Grievance Redressal]</p>
-            </section>
+        <div class="flow-line"></div>
+
+        <section class="max-w-5xl mx-auto mb-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-card p-10 rounded-[40px] border-l-4 border-l-cyan-500/40">
+                <span class="mono text-xs text-cyan-500 uppercase tracking-widest block mb-4">Stage 02: Synthesis Logic</span>
+                <h3 class="text-white text-xl font-medium mb-4">SCLC Directorial Core</h3>
+                <p class="text-sm md:text-base text-zinc-500 leading-relaxed font-light">
+                    Managing scene logic, character weight, and environmental physics to ensure synthesis adheres to directorial standards.
+                </p>
+            </div>
+            <div class="glass-card p-10 rounded-[40px] border-r-4 border-r-cyan-500/40">
+                <span class="mono text-xs text-cyan-500 uppercase tracking-widest block mb-4">Stage 03: Persistence</span>
+                <h3 class="text-white text-xl font-medium mb-4">Temporal Anchoring (URIG)</h3>
+                <p class="text-sm md:text-base text-zinc-500 leading-relaxed font-light">
+                    Utilizing relational graphs to enforce object and entity consistency across multiple generated sequences.
+                </p>
+            </div>
+        </section>
+
+        <div class="flow-line"></div>
+
+        <section class="max-w-3xl mx-auto mb-8">
+            <div class="glass-card p-10 md:p-12 rounded-[40px] text-center border-dashed border-cyan-900/60">
+                <span class="mono text-xs text-cyan-500 uppercase tracking-widest block mb-6">Stage 04: Pixel Synthesis</span>
+                <h3 class="text-white text-2xl font-medium mb-6">Open-Source Orchestration</h3>
+                <div class="flex justify-center items-center gap-6 text-xs md:text-sm mono text-zinc-400 italic mb-6">
+                    <span>Weights Fine-Tuning</span>
+                    <span class="text-cyan-600 text-lg">→</span>
+                    <span>Frame Infilling</span>
+                </div>
+                <p class="text-sm md:text-base text-zinc-500 leading-relaxed font-light">
+                    Orchestrating modified high-performance open-source backends via proprietary directorial weight distribution and kinetic refinement.
+                </p>
+            </div>
+        </section>
+
+        <div class="flow-line"></div>
+
+        <section class="max-w-3xl mx-auto mb-16">
+            <div class="glass-card p-10 md:p-12 rounded-[40px] border-t-4 border-white/10">
+                <span class="mono text-xs text-cyan-500 uppercase tracking-widest block mb-6 text-center">Stage 05: Final Fulfillment</span>
+                <h3 class="text-white text-2xl font-medium mb-8 text-center">Narrative Integrity Export</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                    <div class="bg-zinc-900/60 p-4 rounded-2xl text-center border border-white/5">
+                        <p class="text-[10px] mono text-zinc-500 uppercase mb-2">Backend</p>
+                        <p class="text-base text-white font-medium">Modified OS</p>
+                    </div>
+                    <div class="bg-zinc-900/60 p-4 rounded-2xl text-center border border-white/5">
+                        <p class="text-[10px] mono text-zinc-500 uppercase mb-2">Consistency</p>
+                        <p class="text-base text-white font-medium">Verified</p>
+                    </div>
+                    <div class="bg-zinc-900/60 p-4 rounded-2xl text-center border border-white/5">
+                        <p class="text-[10px] mono text-zinc-500 uppercase mb-2">Metadata</p>
+                        <p class="text-base text-white font-medium">Embedded</p>
+                    </div>
+                    <div class="bg-zinc-900/60 p-4 rounded-2xl text-center border border-white/5">
+                        <p class="text-[10px] mono text-zinc-500 uppercase mb-2">Provenance</p>
+                        <p class="text-base text-white font-medium">C2PA</p>
+                    </div>
+                </div>
+                <p class="text-sm text-zinc-500 italic font-light text-center">Delivering production-ready assets with complete directorial control.</p>
+            </div>
+        </section>
+
+        <section class="dot animate-flow"></section>
+        <div class="flow-line animate-flow"></div>
+
+        <section class="max-w-5xl mx-auto my-32">
+            <div class="glass-card p-10 md:p-16 rounded-[48px] relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-1 h-12 bg-white"></div>
+                            <div>
+                                <h2 class="text-white text-4xl font-semibold tracking-tight">Vibhav Nigam</h2>
+                                <p class="mono text-xs text-cyan-500 uppercase tracking-widest mt-1">Founder & Solo Architect</p>
+                            </div>
+                        </div>
+                        <p class="mono text-[11px] leading-[2] text-zinc-500 uppercase tracking-widest text-left max-w-sm">
+                            Graduate of the Satyajit Ray Film & Television Institute. Jury Award recipient for excellence in editing. Nine years as a post-production specialist across feature films, web series, and commercial media.
+                        </p>
+                    </div>
+                    <div class="flex flex-col justify-center h-full">
+                        <p class="text-white text-xl md:text-2xl font-light italic leading-relaxed text-left border-l border-white/10 pl-8">
+                            "The architecture behind Narrabrain was designed from inside the edit bay — built by someone who spent years translating a director's intent into the exact frame, and who understood precisely why no machine could do what even a junior editor could."
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-16 pt-8 border-t border-white/5 flex justify-between items-center">
+                    <p class="mono text-[10px] text-cyan-500/60 uppercase tracking-[0.2em]">Patent Pending — Provisional Filed, May 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-md mx-auto mt-20 glass-card p-12 md:p-16 rounded-[50px] text-center border-t-4 border-t-cyan-500">
+            <h3 class="text-white text-2xl font-medium mb-10 lowercase tracking-tight">join the studio waitlist</h3>
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+                <input type="hidden" name="access_key" value="e1d7e943-3d1f-430c-817b-542e90c2ae1a">
+                <input type="email" name="email" placeholder="professional email" required class="w-full bg-black/60 border border-zinc-800 rounded-2xl p-5 text-sm text-white focus:border-cyan-500 outline-none text-center">
+                <div class="flex items-start gap-4 text-left px-2">
+                    <input type="checkbox" id="legal-consent" name="consent" required class="mt-1.5 w-4 h-4 rounded bg-black border-zinc-700 checked:bg-cyan-500 cursor-pointer">
+                    <label for="legal-consent" class="text-xs text-zinc-500 leading-normal">
+                        I agree to the <a href="/privacy" class="text-zinc-300 underline hover:text-cyan-400 transition-colors">Privacy Policy</a> and <a href="/terms" class="text-zinc-300 underline hover:text-cyan-400 transition-colors">Terms of Service</a>.
+                    </label>
+                </div>
+                <button type="submit" class="w-full bg-white text-black py-5 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-cyan-400 transition-all">Request Access</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="p-16 border-t border-white/10 glass-card rounded-none text-center">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="mono text-[10px] uppercase tracking-[0.2em] text-cyan-500">© 2026, Narrabrain Labs Pvt Ltd</p>
+            <div class="flex flex-wrap justify-center gap-8 mono text-xs uppercase tracking-widest">
+                <a href="mailto:info@narrabrain.io" class="text-zinc-500 hover:text-cyan-400 transition-colors lowercase tracking-normal">info@narrabrain.io</a>
+                <a href="/privacy" class="text-zinc-500 hover:text-cyan-400 transition-colors">Privacy</a>
+                <a href="/terms" class="text-zinc-500 hover:text-cyan-400 transition-colors">Terms</a>
+            </div>
         </div>
-
-        <footer class="mt-32 pt-12 border-t border-white/5 text-center">
-            <p class="mono text-[10px] text-cyan-500 uppercase tracking-widest">© 2026, Narrabrain Labs Pvt Ltd</p>
-        </footer>
-    </div>
+    </footer>
 </body>
 </html>
