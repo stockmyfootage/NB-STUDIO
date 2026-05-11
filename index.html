@@ -11,12 +11,24 @@
         body { color: #a1a1aa; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; background: var(--bg); }
         .mono { font-family: 'Geist Mono', monospace; }
         .brand-text { font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: -0.05em; color: white; }
+        
         .flow-line { width: 1px; height: 70px; background: linear-gradient(180deg, var(--accent), transparent); margin: 0 auto; }
         .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; margin: 0 auto; box-shadow: 0 0 15px var(--accent); }
+
+        /* AURA ANIMATION */
+        @keyframes aura-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.15; }
+            50% { transform: scale(1.2); opacity: 0.35; }
+        }
+        .animate-aura-pulse {
+            animation: aura-pulse 6s ease-in-out infinite;
+        }
+
         .bg-mesh {
             background-image: radial-gradient(at 15% 0%, rgba(6, 182, 212, 0.1) 0, transparent 40%), radial-gradient(at 85% 100%, rgba(59, 130, 246, 0.08) 0, transparent 40%);
             background-attachment: fixed;
         }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(12px);
@@ -24,6 +36,7 @@
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glass-card:hover { border-color: rgba(6, 182, 212, 0.4); }
+
         @keyframes flow-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.9; } }
         .animate-flow { animation: flow-pulse 4s infinite; }
     </style>
@@ -38,9 +51,14 @@
     <main class="pt-48 pb-20 px-6">
         
         <section class="max-w-4xl mx-auto text-center mb-16">
-            <img src="nb-studio.png" alt="Logo" class="w-48 mx-auto mb-12 opacity-90">
-            <h1 class="text-white text-5xl md:text-7xl font-medium tracking-tighter leading-tight mb-8">
-                Curing <span class="text-cyan-400 italic">Production Friction</span>.
+            
+            <div class="relative inline-block mb-12">
+                <div class="absolute inset-0 bg-cyan-500/20 blur-[80px] rounded-full animate-aura-pulse"></div>
+                <img src="nb-studio.png" alt="Logo" class="w-48 mx-auto relative z-10 opacity-95">
+            </div>
+
+            <h1 class="text-white text-5xl md:text-5xl font-medium tracking-tighter leading-tight mb-8">
+                Solving <span class="text-cyan-400 italic">Production Friction</span>.
             </h1>
             <p class="text-zinc-400 text-xl md:text-2xl font-light max-w-2xl mx-auto leading-relaxed">
                 An agentic orchestration layer for high-fidelity synthesis via modified open-source cinematic backends.
@@ -92,7 +110,7 @@
                     <span>Frame Infilling</span>
                 </div>
                 <p class="text-sm md:text-base text-zinc-500 leading-relaxed font-light">
-                    Orchestrating modified high-performance open-source backends via proprietary directorial weight distribution and kinetic refinement.
+                    Orchestrating modified high-performance open-source backends via proprietary directorial weight distribution.
                 </p>
             </div>
         </section>
@@ -125,9 +143,6 @@
             </div>
         </section>
 
-        <section class="dot animate-flow"></section>
-        <div class="flow-line animate-flow"></div>
-
         <section class="max-w-5xl mx-auto my-32">
             <div class="glass-card p-10 md:p-16 rounded-[48px] relative overflow-hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -158,7 +173,7 @@
         <section class="max-w-md mx-auto mt-20 glass-card p-12 md:p-16 rounded-[50px] text-center border-t-4 border-t-cyan-500">
             <h3 class="text-white text-2xl font-medium mb-10 lowercase tracking-tight">join the studio waitlist</h3>
             <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
-                <input type="hidden" name="access_key" value="e1d7e943-3d1f-430c-817b-542e90c2ae1a">
+                <input type="hidden" name="access_key" value="0e1f2a70-52f3-44dc-a3c5-769bea22bd3e">
                 <input type="email" name="email" placeholder="professional email" required class="w-full bg-black/60 border border-zinc-800 rounded-2xl p-5 text-sm text-white focus:border-cyan-500 outline-none text-center">
                 <div class="flex items-start gap-4 text-left px-2">
                     <input type="checkbox" id="legal-consent" name="consent" required class="mt-1.5 w-4 h-4 rounded bg-black border-zinc-700 checked:bg-cyan-500 cursor-pointer">
@@ -175,7 +190,7 @@
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <p class="mono text-[10px] uppercase tracking-[0.2em] text-cyan-500">© 2026, Narrabrain Labs Pvt Ltd</p>
             <div class="flex flex-wrap justify-center gap-8 mono text-xs uppercase tracking-widest">
-                <a href="mailto:info@narrabrain.io" class="text-zinc-500 hover:text-cyan-400 transition-colors lowercase tracking-normal">info@narrabrain.in</a>
+                <a href="mailto:info@narrabrain.io" class="text-zinc-500 hover:text-cyan-400 transition-colors lowercase tracking-normal">info@narrabrain.io</a>
                 <a href="/privacy" class="text-zinc-500 hover:text-cyan-400 transition-colors">Privacy</a>
                 <a href="/terms" class="text-zinc-500 hover:text-cyan-400 transition-colors">Terms</a>
             </div>
