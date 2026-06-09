@@ -14,8 +14,10 @@
             --nv-bg-element: #2B2D31;
             --nv-text-primary: #E3E5E8;
             --nv-text-muted: #949BA4;
-            --nv-accent-brand: #06b6d4; /* Specialized Cyan brand value for .studio workspace layer */
+            --nv-accent-brand: #477BFF;
+            --nv-accent-studio: #06b6d4; /* Specialized localized cyan focus identifier */
             
+            --radius-xs: 2px;
             --radius-sm: 4px;
             --radius-md: 6px;
             --radius-lg: 8px;
@@ -57,48 +59,22 @@
         .flow-line { 
             width: 1px; 
             height: 70px; 
-            background: linear-gradient(180deg, var(--nv-accent-brand), transparent); 
+            background: linear-gradient(180deg, var(--nv-accent-studio), transparent); 
             margin: 0 auto; 
-        }
-
-        /* NDS-V9 VIDEO ARCHITECTURE EMBEDDED GRAPHIC (.STUDIO VARIANT)
-           Simulates a continuous generative time-slice composition lane */
-        .studio-track-graphic {
-            display: inline-flex;
-            gap: 4px;
-            align-items: center;
-            vertical-align: middle;
-            margin-left: 12px;
-            position: relative;
-            top: -2px;
-        }
-        .frame-slice {
-            height: 14px;
-            background: var(--nv-accent-brand);
-            border-radius: var(--radius-xs);
-            opacity: 0.4;
-            box-shadow: 0 0 10px var(--nv-accent-brand);
-        }
-        .frame-slice-1 { width: 4px; animation: pulse-slice 2s infinite ease-in-out; }
-        .frame-slice-2 { width: 12px; opacity: 0.9; animation: pulse-slice 2s infinite ease-in-out 0.3s; }
-        .frame-slice-3 { width: 6px; animation: pulse-slice 2s infinite ease-in-out 0.6s; }
-
-        @keyframes pulse-slice {
-            0%, 100% { transform: scaleY(1); opacity: 0.4; }
-            50% { transform: scaleY(1.3); opacity: 0.9; box-shadow: 0 0 16px var(--nv-accent-brand); }
         }
 
         /* Dynamic Engine Ambience */
         @keyframes aura-pulse {
             0%, 100% { transform: scale(1); opacity: 0.12; }
-            50% { transform: scale(1.15); opacity: 0.28; }
+            50% { transform: scale(1.1); opacity: 0.25; }
         }
         .animate-aura-pulse { animation: aura-pulse 6s ease-in-out infinite; }
 
+        /* Unified NDS-V9 Calibrated Ambient Background Mesh */
         .bg-mesh {
             background-image: 
-                radial-gradient(at 15% 0%, rgba(6, 182, 212, 0.08) 0, transparent 40%), 
-                radial-gradient(at 85% 100%, rgba(59, 130, 246, 0.06) 0, transparent 40%);
+                radial-gradient(at 15% 0%, rgba(71, 123, 255, 0.07) 0, transparent 40%), 
+                radial-gradient(at 85% 100%, rgba(36, 161, 156, 0.06) 0, transparent 40%);
             background-attachment: fixed;
         }
 
@@ -129,13 +105,44 @@
     <main class="pt-48 pb-20 px-6">
         
         <section class="max-w-4xl mx-auto text-center mb-20">
-            <div class="relative inline-block mb-12">
+            
+            <div class="relative inline-block mb-14">
                 <div class="absolute inset-0 bg-cyan-500/20 blur-[80px] rounded-full animate-aura-pulse"></div>
-                <img src="nb-studio.png" alt="Logo" class="w-48 mx-auto relative z-10 opacity-90">
+                
+                <div class="relative z-10 w-52 h-32 glass-card p-4 flex flex-col justify-between overflow-hidden text-left" style="border-radius: 16px; background-color: rgba(30, 31, 34, 0.4); border-color: rgba(255,255,255,0.08);">
+                    <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                            <span class="text-[9px] mono uppercase tracking-wider text-zinc-400">Gen_Track_01</span>
+                        </div>
+                        <span class="text-[8px] mono text-cyan-400/80">SCLC // ENG</span>
+                    </div>
+                    
+                    <div class="space-y-2 my-2">
+                        <div class="h-1 w-full bg-zinc-800/60 rounded-full overflow-hidden relative">
+                            <div class="absolute top-0 left-0 h-full w-3/4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-pulse"></div>
+                        </div>
+                        <div class="h-1 w-full bg-zinc-800/60 rounded-full overflow-hidden relative">
+                            <div class="absolute top-0 left-1/4 h-full w-1/2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+                        </div>
+                        <div class="h-1 w-full bg-zinc-800/60 rounded-full overflow-hidden relative">
+                            <div class="absolute top-0 left-1/12 h-full w-2/3 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full animate-pulse" style="animation-delay: 0.8s"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center pt-2 border-t border-white/5 text-[8px] mono text-zinc-500 uppercase tracking-widest">
+                        <span>00:02:14:09</span>
+                        <div class="flex gap-1">
+                            <span class="w-1 h-1 bg-cyan-400 rounded-full"></span>
+                            <span class="w-1 h-1 bg-zinc-700 rounded-full"></span>
+                            <span class="w-1 h-1 bg-zinc-700 rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <h1 class="text-white text-5xl display-title tracking-tight leading-tight mb-8">
-                Solving <span class="text-cyan-400 italic">Production Friction</span><span class="studio-track-graphic"><span class="frame-slice frame-slice-1"></span><span class="frame-slice frame-slice-2"></span><span class="frame-slice frame-slice-3"></span></span>.
+                Solving <span class="text-cyan-400 italic">Production Friction</span>.
             </h1>
             <p class="text-base md:text-xl font-light max-w-2xl mx-auto leading-relaxed" style="color: var(--nv-text-muted);">
                 An agentic orchestration layer for high-fidelity synthesis via modified open-source cinematic backends.
@@ -146,7 +153,7 @@
 
         <section class="max-w-3xl mx-auto mb-8">
             <div class="glass-card p-10 md:p-14 rounded-3xl text-center" style="border-radius: 32px;">
-                <span class="mono text-xs uppercase block mb-6" style="color: var(--nv-accent-brand);">Stage 01: Intent Orchestration</span>
+                <span class="mono text-xs uppercase block mb-6" style="color: var(--nv-accent-studio);">Stage 01: Intent Orchestration</span>
                 <div class="border p-6 rounded-2xl mb-8 text-base md:text-base italic font-light" style="background-color: var(--nv-bg-canvas); border-color: var(--nv-bg-element); color: var(--nv-text-muted);">
                     "Open with a tracking shot of the protagonist, maintain 50mm depth of field, sunset lighting."
                 </div>
@@ -159,14 +166,14 @@
 
         <section class="max-w-5xl mx-auto mb-8 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="glass-card p-10 rounded-3xl" style="border-radius: 32px; border-l: 3px solid rgba(6, 182, 212, 0.4);">
-                <span class="mono text-xs uppercase block mb-4" style="color: var(--nv-accent-brand);">Stage 02: Synthesis Logic</span>
+                <span class="mono text-xs uppercase block mb-4" style="color: var(--nv-accent-studio);">Stage 02: Synthesis Logic</span>
                 <h3 class="text-white text-2xl font-medium mb-4 display-title">SCLC Directorial Core</h3>
                 <p class="text-base leading-relaxed font-light" style="color: var(--nv-text-muted);">
                     Managing scene logic, character weight, and environmental physics to ensure synthesis adheres to directorial standards.
                 </p>
             </div>
             <div class="glass-card p-10 rounded-3xl" style="border-radius: 32px; border-r: 3px solid rgba(6, 182, 212, 0.4);">
-                <span class="mono text-xs uppercase block mb-4" style="color: var(--nv-accent-brand);">Stage 03: Persistence</span>
+                <span class="mono text-xs uppercase block mb-4" style="color: var(--nv-accent-studio);">Stage 03: Persistence</span>
                 <h3 class="text-white text-2xl font-medium mb-4 display-title">Temporal Anchoring (URIG)</h3>
                 <p class="text-base leading-relaxed font-light" style="color: var(--nv-text-muted);">
                     Utilizing relational graphs to enforce object and entity consistency across multiple generated sequences.
@@ -178,7 +185,7 @@
 
         <section class="max-w-3xl mx-auto mb-8">
             <div class="glass-card p-10 md:p-14 rounded-3xl text-center style-border-dashed" style="border-radius: 32px; border-style: dashed; border-color: rgba(6, 182, 212, 0.15);">
-                <span class="mono text-xs uppercase block mb-6" style="color: var(--nv-accent-brand);">Stage 04: Pixel Synthesis</span>
+                <span class="mono text-xs uppercase block mb-6" style="color: var(--nv-accent-studio);">Stage 04: Pixel Synthesis</span>
                 <h3 class="text-white text-2xl font-medium mb-6 display-title">Open-Source Orchestration</h3>
                 <div class="flex justify-center items-center gap-6 text-xs mono italic mb-6" style="color: var(--nv-text-muted);">
                     <span>Weights Fine-Tuning</span>
@@ -195,7 +202,7 @@
 
         <section class="max-w-3xl mx-auto mb-20">
             <div class="glass-card p-10 md:p-14 rounded-3xl" style="border-radius: 32px; border-top: 3px solid rgba(255,255,255,0.08);">
-                <span class="mono text-xs uppercase block mb-6 text-center" style="color: var(--nv-accent-brand);">Stage 05: Final Fulfillment</span>
+                <span class="mono text-xs uppercase block mb-6 text-center" style="color: var(--nv-accent-studio);">Stage 05: Final Fulfillment</span>
                 <h3 class="text-white text-2xl font-medium mb-8 text-center display-title">Narrative Integrity Export</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                     <div class="p-4 rounded-xl text-center border" style="background-color: var(--nv-bg-surface); border-color: rgba(255,255,255,0.03); border-radius: 12px;">
@@ -215,7 +222,7 @@
                         <p class="text-base text-white font-medium">C2PA</p>
                     </div>
                 </div>
-                <p class="text-xs style-italic text-zinc-500 font-light text-center">Delivering production-ready assets with complete directorial control.</p>
+                <p class="text-xs font-light text-zinc-500 text-center italic">Delivering production-ready assets with complete directorial control.</p>
             </div>
         </section>
 
@@ -227,7 +234,7 @@
                             <div class="w-1 h-12 bg-white"></div>
                             <div>
                                 <h2 class="text-white text-4xl display-title tracking-tight">Vibhav Nigam</h2>
-                                <p class="mono text-xs uppercase mt-1" style="color: var(--nv-accent-brand);">Founder & Solo Architect</p>
+                                <p class="mono text-xs uppercase mt-1" style="color: var(--nv-accent-studio);">Founder & Solo Architect</p>
                             </div>
                         </div>
                         <p class="mono text-[11px] leading-[2] uppercase text-left max-w-sm" style="color: var(--nv-text-muted);">
@@ -246,7 +253,7 @@
             </div>
         </section>
 
-        <section class="max-w-md mx-auto mt-20 glass-card p-12 md:p-16 rounded-[32px] text-center" style="border-top: 3px solid var(--nv-accent-brand);">
+        <section class="max-w-md mx-auto mt-20 glass-card p-12 md:p-16 rounded-[32px] text-center" style="border-top: 3px solid var(--nv-accent-studio);">
             <h3 class="text-white text-2xl mb-10 lowercase tracking-tight display-title">join the studio waitlist</h3>
             <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
                 <input type="hidden" name="access_key" value="0e1f2a70-52f3-44dc-a3c5-769bea22bd3e">
@@ -264,7 +271,7 @@
 
     <footer class="p-16 border-t glass-card rounded-none text-center" style="border-color: rgba(255,255,255,0.05);">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <p class="mono text-[10px] uppercase" style="color: var(--nv-accent-brand);">© 2026, Narrabrain Labs Pvt Ltd</p>
+            <p class="mono text-[10px] uppercase" style="color: var(--nv-accent-studio);">© 2026, Narrabrain Labs Pvt Ltd</p>
             <div class="flex flex-wrap justify-center gap-8 mono text-xs uppercase tracking-widest">
                 <a href="mailto:info@narrabrain.studio" class="text-zinc-500 hover:text-cyan-400 transition-colors lowercase tracking-normal">info@narrabrain.studio</a>
                 <a href="/privacy" style="color: var(--nv-text-muted);" class="hover:text-cyan-400 transition-colors">Privacy</a>
