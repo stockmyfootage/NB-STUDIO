@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>narrabrain.studio | directorial video synthesis</title>
+    <title>narrabrain.studio | agentic synthesis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=fallback" rel="stylesheet">
     <style>
-        :root { 
-            --accent: #06b6d4; 
-            --bg: #000000; 
-            --text-muted: #949BA4;
+        /* NDS-V9 Design System Specification Root Tokens */
+        :root {
+            --nv-bg-canvas: #121214;
+            --nv-bg-surface: #1E1F22;
+            --nv-bg-element: #2B2D31;
+            --nv-text-primary: #E3E5E8;
+            --nv-text-muted: #949BA4;
+            --nv-accent-brand: #477BFF;
+            --nv-accent-studio: #06b6d4; /* Specialized localized cyan focus identifier */
+            
+            --radius-xs: 2px;
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 8px;
+            --radius-xl: 12px;
+            --radius-3xl: 24px;
+            --radius-full: 9999px;
         }
-        
+
         body { 
-            background: var(--bg); 
-            color: #a1a1aa; 
+            background-color: var(--nv-bg-canvas);
+            color: var(--nv-text-primary); 
             font-family: 'Inter', sans-serif; 
             -webkit-font-smoothing: antialiased; 
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; 
+            margin: 0;
+            padding: 0;
         }
-        
+
+        /* NDS-V9 Scaled Typography Mechanics */
+        .text-xs { font-size: 10px; line-height: 1.4; letter-spacing: 0.03em; }
+        .text-sm { font-size: 11px; line-height: 1.5; letter-spacing: 0.05em; }
+        .text-base { font-size: 13px; line-height: 1.6; letter-spacing: 0.01em; }
+        .text-2xl { font-size: 24px; line-height: 1.25; letter-spacing: -0.01em; }
+        .text-4xl { font-size: 32px; line-height: 1.2; letter-spacing: -0.02em; }
+        .text-5xl { font-size: 48px; line-height: 1.1; letter-spacing: -0.03em; }
+
         .display-title {
             font-family: 'Playfair Display', Georgia, serif;
             font-weight: 500;
@@ -32,95 +55,202 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
         }
+        
+        .flow-line { 
+            width: 1px; 
+            height: 70px; 
+            background: linear-gradient(180deg, var(--nv-accent-studio), transparent); 
+            margin: 0 auto; 
+        }
 
-        /* Unified .io Calibrated Ambient Background Mesh */
+        /* Unified NDS-V9 Calibrated Ambient Background Mesh */
         .bg-mesh {
             background-image: 
-                radial-gradient(at 15% 0%, rgba(6, 182, 212, 0.07) 0, transparent 40%), 
-                radial-gradient(at 85% 100%, rgba(36, 161, 156, 0.05) 0, transparent 40%);
+                radial-gradient(at 15% 0%, rgba(71, 123, 255, 0.07) 0, transparent 40%), 
+                radial-gradient(at 85% 100%, rgba(36, 161, 156, 0.06) 0, transparent 40%);
             background-attachment: fixed;
         }
 
-        /* Zero-Glare Glass Panel Layers matching main studio layout */
+        /* Zero-Glare Glass Panel Layers */
         .glass-card {
-            background: rgba(255, 255, 255, 0.01);
+            background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glass-card:hover { 
             border-color: rgba(6, 182, 212, 0.25); 
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
         }
+
+        @keyframes flow-pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.7; } }
+        .animate-flow { animation: flow-pulse 4s infinite; }
     </style>
 </head>
-<body class="bg-mesh p-8 md:p-24">
-    <div class="max-w-3xl mx-auto">
+<body class="bg-mesh">
+
+    <nav class="fixed top-0 w-full z-50 p-6 md:px-12 flex justify-between items-center backdrop-blur-md border-b border-white/5">
+        <div class="brand-text text-xl lowercase font-medium tracking-tighter text-white">narrabrain.studio</div>
+        <div class="glass-card px-5 py-2 rounded-full mono text-xs tracking-widest uppercase text-cyan-400 font-bold">stealth mode</div>
+    </nav>
+
+    <main class="pt-48 pb-20 px-6">
         
-        <nav class="mb-12 flex justify-between items-center">
-            <span class="text-zinc-600 mono text-xs uppercase tracking-widest">system: online</span>
-            <a href="mailto:info@narrabrain.io" class="text-cyan-500 mono text-xs uppercase tracking-widest hover:text-white transition-colors">contact</a>
-        </nav>
-
-        <div class="relative w-full h-24 flex items-center justify-center overflow-hidden mb-6 select-none pointer-events-none">
-            <svg class="absolute w-full max-w-xl h-full opacity-20" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="0" y1="20" x2="400" y2="20" stroke="#2B2D31" stroke-width="0.75" stroke-dasharray="2 4" />
-                <line x1="0" y1="50" x2="400" y2="50" stroke="#1E1F22" stroke-width="1" />
-                <line x1="0" y1="80" x2="400" y2="80" stroke="#2B2D31" stroke-width="0.75" stroke-dasharray="2 4" />
-                <line x1="80" y1="0" x2="80" y2="100" stroke="#1E1F22" stroke-width="1" />
-                <line x1="200" y1="0" x2="200" y2="100" stroke="#2B2D31" stroke-width="0.75" stroke-dasharray="4 4" />
-                <line x1="320" y1="0" x2="320" y2="100" stroke="#1E1F22" stroke-width="1" />
-                <path d="M 10 50 Q 100 20 200 50 T 390 50" stroke="#949BA4" stroke-width="1" stroke-opacity="0.2" />
-                <circle cx="80" cy="30" r="1.5" fill="#2B2D31" />
-                <circle cx="320" cy="70" r="1.5" fill="#2B2D31" />
-                <circle cx="200" cy="50" r="2.5" fill="#477BFF" fill-opacity="0.6" />
-            </svg>
-        </div>
-
-        <header class="mb-20 text-center md:text-left">
-            <h1 class="text-white text-4xl display-title tracking-tighter mb-4 lowercase">narrabrain.studio</h1>
-            <p class="mono text-[10px] text-zinc-600 uppercase tracking-[0.3em]">Module: .studio // Directorial Orchestration Layer</p>
-        </header>
-
-        <div class="space-y-12 text-sm md:text-base leading-relaxed font-light">
+        <section class="max-w-4xl mx-auto text-center mb-20">
             
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">Core Engine</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">
-                    An advanced orchestration framework for narrative-driven synthetic media. Powered by our proprietary <strong class="text-zinc-200 font-medium">Shared Contextual Logic Core (SCLC)</strong> and <strong class="text-zinc-200 font-medium">Narrative Delta Reinforcement Logic (NDRL)</strong>, the platform bridges semantic intent with high-fidelity temporal video synthesis.
+            <div class="relative w-full h-24 flex items-center justify-center overflow-hidden mb-12 select-none pointer-events-none">
+                <svg class="absolute w-full max-w-xl h-full opacity-20" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="20" x2="400" y2="20" stroke="#2B2D31" stroke-width="0.75" stroke-dasharray="2 4" />
+                    <line x1="0" y1="50" x2="400" y2="50" stroke="#1E1F22" stroke-width="1" />
+                    <line x1="0" y1="80" x2="400" y2="80" stroke="#2B2D31" stroke-width="0.75" stroke-dasharray="2 4" />
+                    <line x1="80" y1="0" x2="80" y2="100" stroke="#1E1F22" stroke-width="1" />
+                    <line x1="200" y1="0" x2="200" y2="100" stroke="#2B2D31" stroke-width="0.75" stroke-dasharray="4 4" />
+                    <line x1="320" y1="0" x2="320" y2="100" stroke="#1E1F22" stroke-width="1" />
+                    <path d="M 10 50 Q 100 20 200 50 T 390 50" stroke="#949BA4" stroke-width="1" stroke-opacity="0.2" />
+                    <circle cx="80" cy="30" r="1.5" fill="#2B2D31" />
+                    <circle cx="320" cy="70" r="1.5" fill="#2B2D31" />
+                    <circle cx="200" cy="50" r="2.5" fill="var(--nv-accent-brand)" fill-opacity="0.6" />
+                </svg>
+            </div>
+
+            <h1 class="text-white text-5xl display-title tracking-tight leading-tight mb-8">
+                Solving <span class="text-cyan-400 italic">Production Friction</span>.
+            </h1>
+            <p class="text-base md:text-xl font-light max-w-2xl mx-auto leading-relaxed" style="color: var(--nv-text-muted);">
+                An agentic orchestration layer for high-fidelity synthesis via modified open-source cinematic backends.
+            </p>
+        </section>
+
+        <div class="flow-line animate-flow" style="height: 40px; margin-bottom: 20px;"></div>
+
+        <section class="max-w-3xl mx-auto mb-8">
+            <div class="glass-card p-10 md:p-14 rounded-3xl text-center" style="border-radius: 32px;">
+                <span class="mono text-xs uppercase block mb-6" style="color: var(--nv-accent-studio);">Stage 01: Intent Orchestration</span>
+                <div class="border p-6 rounded-2xl mb-8 text-base md:text-base italic font-light" style="background-color: var(--nv-bg-canvas); border-color: var(--nv-bg-element); color: var(--nv-text-muted);">
+                    "Open with a tracking shot of the protagonist, maintain 50mm depth of field, sunset lighting."
+                </div>
+                <h3 class="text-white text-2xl font-medium mb-3 display-title">Directorial Input Parsing</h3>
+                <p class="text-base leading-relaxed" style="color: var(--nv-text-muted);">Translating narrative vision into deterministic camera and lighting vectors.</p>
+            </div>
+        </section>
+
+        <div class="flow-line"></div>
+
+        <section class="max-w-5xl mx-auto mb-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-card p-10 rounded-3xl" style="border-radius: 32px; border-l: 3px solid rgba(6, 182, 212, 0.4);">
+                <span class="mono text-xs uppercase block mb-4" style="color: var(--nv-accent-studio);">Stage 02: Synthesis Logic</span>
+                <h3 class="text-white text-2xl font-medium mb-4 display-title">SCLC Directorial Core</h3>
+                <p class="text-base leading-relaxed font-light" style="color: var(--nv-text-muted);">
+                    Managing scene logic, character weight, and environmental physics to ensure synthesis adheres to directorial standards.
                 </p>
-            </section>
-
-            <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                    <h3 class="text-zinc-300 text-xs font-bold uppercase tracking-widest mb-2 mono">// Temporal Consistency</h3>
-                    <p class="text-xs text-zinc-500 font-light leading-relaxed">
-                        Maintains strict character and environmental persistence across sequential generation pipelines, minimizing artifacting and visual anomalies.
-                    </p>
-                </div>
-                <div class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                    <h3 class="text-zinc-300 text-xs font-bold uppercase tracking-widest mb-2 mono">// Directorial Control</h3>
-                    <p class="text-xs text-zinc-500 font-light leading-relaxed">
-                        Fine-tune camera geometry, emotional arc values, and atmospheric parameters through decoupled vector property controls.
-                    </p>
-                </div>
-            </section>
-
-            <div class="pt-6 text-center md:text-left">
-                <a href="mailto:info@narrabrain.io" class="inline-block bg-zinc-900 border border-zinc-800 text-white hover:border-cyan-500/50 text-xs uppercase tracking-widest mono px-8 py-4 rounded-xl transition-all">
-                    Request Console Access
-                </a>
             </div>
+            <div class="glass-card p-10 rounded-3xl" style="border-radius: 32px; border-r: 3px solid rgba(6, 182, 212, 0.4);">
+                <span class="mono text-xs uppercase block mb-4" style="color: var(--nv-accent-studio);">Stage 03: Persistence</span>
+                <h3 class="text-white text-2xl font-medium mb-4 display-title">Temporal Anchoring (URIG)</h3>
+                <p class="text-base leading-relaxed font-light" style="color: var(--nv-text-muted);">
+                    Utilizing relational graphs to enforce object and entity consistency across multiple generated sequences.
+                </p>
+            </div>
+        </section>
 
+        <div class="flow-line"></div>
+
+        <section class="max-w-3xl mx-auto mb-8">
+            <div class="glass-card p-10 md:p-14 rounded-3xl text-center style-border-dashed" style="border-radius: 32px; border-style: dashed; border-color: rgba(6, 182, 212, 0.15);">
+                <span class="mono text-xs uppercase block mb-6" style="color: var(--nv-accent-studio);">Stage 04: Pixel Synthesis</span>
+                <h3 class="text-white text-2xl font-medium mb-6 display-title">Open-Source Orchestration</h3>
+                <div class="flex justify-center items-center gap-6 text-xs mono italic mb-6" style="color: var(--nv-text-muted);">
+                    <span>Weights Fine-Tuning</span>
+                    <span class="text-cyan-500 text-base">→</span>
+                    <span>Frame Infilling</span>
+                </div>
+                <p class="text-base leading-relaxed font-light" style="color: var(--nv-text-muted);">
+                    Orchestrating modified high-performance open-source backends via proprietary directorial weight distribution.
+                </p>
+            </div>
+        </section>
+
+        <div class="flow-line"></div>
+
+        <section class="max-w-3xl mx-auto mb-20">
+            <div class="glass-card p-10 md:p-14 rounded-3xl" style="border-radius: 32px; border-top: 3px solid rgba(255,255,255,0.08);">
+                <span class="mono text-xs uppercase block mb-6 text-center" style="color: var(--nv-accent-studio);">Stage 05: Final Fulfillment</span>
+                <h3 class="text-white text-2xl font-medium mb-8 text-center display-title">Narrative Integrity Export</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                    <div class="p-4 rounded-xl text-center border" style="background-color: var(--nv-bg-surface); border-color: rgba(255,255,255,0.03); border-radius: 12px;">
+                        <p class="text-xs mono uppercase mb-2" style="color: var(--nv-text-muted);">Backend</p>
+                        <p class="text-base text-white font-medium">Modified OS</p>
+                    </div>
+                    <div class="p-4 rounded-xl text-center border" style="background-color: var(--nv-bg-surface); border-color: rgba(255,255,255,0.03); border-radius: 12px;">
+                        <p class="text-xs mono uppercase mb-2" style="color: var(--nv-text-muted);">Consistency</p>
+                        <p class="text-base text-white font-medium">Verified</p>
+                    </div>
+                    <div class="p-4 rounded-xl text-center border" style="background-color: var(--nv-bg-surface); border-color: rgba(255,255,255,0.03); border-radius: 12px;">
+                        <p class="text-xs mono uppercase mb-2" style="color: var(--nv-text-muted);">Metadata</p>
+                        <p class="text-base text-white font-medium">Embedded</p>
+                    </div>
+                    <div class="p-4 rounded-xl text-center border" style="background-color: var(--nv-bg-surface); border-color: rgba(255,255,255,0.03); border-radius: 12px;">
+                        <p class="text-xs mono uppercase mb-2" style="color: var(--nv-text-muted);">Provenance</p>
+                        <p class="text-base text-white font-medium">C2PA</p>
+                    </div>
+                </div>
+                <p class="text-xs font-light text-zinc-500 text-center italic">Delivering production-ready assets with complete directorial control.</p>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto my-32">
+            <div class="glass-card p-10 md:p-16 rounded-[32px] relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-1 h-12 bg-white"></div>
+                            <div>
+                                <h2 class="text-white text-4xl display-title tracking-tight">Vibhav Nigam</h2>
+                                <p class="mono text-xs uppercase mt-1" style="color: var(--nv-accent-studio);">Founder & Solo Architect</p>
+                            </div>
+                        </div>
+                        <p class="mono text-[11px] leading-[2] uppercase text-left max-w-sm" style="color: var(--nv-text-muted);">
+                            Graduate of the Satyajit Ray Film & Television Institute. Jury Award recipient for excellence in editing. Nine years as a post-production specialist across feature films, web series, and commercial media.
+                        </p>
+                    </div>
+                    <div class="flex flex-col justify-center h-full">
+                        <p class="text-white text-base md:text-xl font-light italic leading-relaxed text-left border-l pl-8" style="border-color: rgba(255,255,255,0.08); color: var(--nv-text-primary);">
+                            "The architecture behind Narrabrain was designed from inside the edit bay — built by someone who spent years translating a director's intent into the exact frame, and who understood precisely why no machine could do what even a junior editor could."
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-16 pt-8 border-t flex justify-between items-center" style="border-color: rgba(255,255,255,0.05);">
+                    <p class="mono text-[10px] uppercase" style="color: rgba(6, 182, 212, 0.5);">Patent Pending — Provisional Filed, May 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-md mx-auto mt-20 glass-card p-12 md:p-16 rounded-[32px] text-center" style="border-top: 3px solid var(--nv-accent-studio);">
+            <h3 class="text-white text-2xl mb-10 lowercase tracking-tight display-title">join the studio waitlist</h3>
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+                <input type="hidden" name="access_key" value="0e1f2a70-52f3-44dc-a3c5-769bea22bd3e">
+                <input type="email" name="email" placeholder="professional email" required class="w-full border rounded-2xl p-5 text-sm text-white focus:border-cyan-500 outline-none text-center" style="background-color: rgba(0, 0, 0, 0.4); border-color: var(--nv-bg-element);">
+                <div class="flex items-start gap-4 text-left px-2">
+                    <input type="checkbox" id="legal-consent" name="consent" required class="mt-1.5 w-4 h-4 rounded bg-black border-zinc-700 checked:bg-cyan-500 cursor-pointer">
+                    <label for="legal-consent" class="text-xs leading-normal" style="color: var(--nv-text-muted);">
+                        I agree to the <a href="/privacy" class="text-zinc-300 underline hover:text-cyan-400 transition-colors">Privacy Policy</a> and <a href="/terms" class="text-zinc-300 underline hover:text-cyan-400 transition-colors">Terms of Service</a>.
+                    </label>
+                </div>
+                <button type="submit" class="w-full bg-white text-black py-5 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-cyan-400 transition-all" style="border-radius: 12px;">Request Access</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="p-16 border-t glass-card rounded-none text-center" style="border-color: rgba(255,255,255,0.05);">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="mono text-[10px] uppercase" style="color: var(--nv-accent-studio);">© 2026, Narrabrain Labs Pvt Ltd</p>
+            <div class="flex flex-wrap justify-center gap-8 mono text-xs uppercase tracking-widest">
+                <a href="mailto:info@narrabrain.studio" class="text-zinc-500 hover:text-cyan-400 transition-colors lowercase tracking-normal">info@narrabrain.studio</a>
+                <a href="/privacy" style="color: var(--nv-text-muted);" class="hover:text-cyan-400 transition-colors">Privacy</a>
+                <a href="/terms" style="color: var(--nv-text-muted);" class="hover:text-cyan-400 transition-colors">Terms</a>
+            </div>
         </div>
-
-        <footer class="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="mono text-[10px] text-zinc-600 uppercase tracking-widest">© 2026, Narrabrain Labs Pvt Ltd</p>
-            <div class="flex gap-6">
-                <a href="/privacy" class="mono text-[10px] text-cyan-500 hover:text-white transition-colors uppercase tracking-widest">Privacy</a>
-                <a href="/terms" class="mono text-[10px] text-cyan-500 hover:text-white transition-colors uppercase tracking-widest">Terms</a>
-            </div>
-        </footer>
-    </div>
+    </footer>
 </body>
 </html>
