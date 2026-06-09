@@ -1,49 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>narrabrain.studio | agentic synthesis</title>
+    <title>terms of service | narrabrain.studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=fallback" rel="stylesheet">
     <style>
-        /* NDS-V9 Design System Specification Root Tokens */
-        :root {
-            --nv-bg-canvas: #121214;
-            --nv-bg-surface: #1E1F22;
-            --nv-bg-element: #2B2D31;
-            --nv-text-primary: #E3E5E8;
-            --nv-text-muted: #949BA4;
-            --nv-accent-brand: #477BFF;
-            --nv-accent-studio: #06b6d4; /* Specialized localized cyan focus identifier */
-            
-            --radius-xs: 2px;
-            --radius-sm: 4px;
-            --radius-md: 6px;
-            --radius-lg: 8px;
-            --radius-xl: 12px;
-            --radius-3xl: 24px;
-            --radius-full: 9999px;
+        :root { 
+            --accent: #06b6d4; 
+            --bg: #000000; 
+            --text-muted: #949BA4;
         }
-
+        
         body { 
-            background-color: var(--nv-bg-canvas);
-            color: var(--nv-text-primary); 
+            background: var(--bg); 
+            color: #a1a1aa; 
             font-family: 'Inter', sans-serif; 
             -webkit-font-smoothing: antialiased; 
-            scroll-behavior: smooth; 
-            margin: 0;
-            padding: 0;
+            scroll-behavior: smooth;
         }
-
-        /* NDS-V9 Scaled Typography Mechanics */
-        .text-xs { font-size: 10px; line-height: 1.4; letter-spacing: 0.03em; }
-        .text-sm { font-size: 11px; line-height: 1.5; letter-spacing: 0.05em; }
-        .text-base { font-size: 13px; line-height: 1.6; letter-spacing: 0.01em; }
-        .text-2xl { font-size: 24px; line-height: 1.25; letter-spacing: -0.01em; }
-        .text-4xl { font-size: 32px; line-height: 1.2; letter-spacing: -0.02em; }
-        .text-5xl { font-size: 48px; line-height: 1.1; letter-spacing: -0.03em; }
-
+        
         .display-title {
             font-family: 'Playfair Display', Georgia, serif;
             font-weight: 500;
@@ -55,231 +32,199 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
         }
-        
-        .flow-line { 
-            width: 1px; 
-            height: 70px; 
-            background: linear-gradient(180deg, var(--nv-accent-studio), transparent); 
-            margin: 0 auto; 
-        }
 
-        /* Dynamic Engine Ambience */
-        @keyframes aura-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.12; }
-            50% { transform: scale(1.1); opacity: 0.25; }
-        }
-        .animate-aura-pulse { animation: aura-pulse 6s ease-in-out infinite; }
-
-        /* Unified NDS-V9 Calibrated Ambient Background Mesh */
+        /* Unified .io Calibrated Ambient Background Mesh */
         .bg-mesh {
             background-image: 
-                radial-gradient(at 15% 0%, rgba(71, 123, 255, 0.07) 0, transparent 40%), 
-                radial-gradient(at 85% 100%, rgba(36, 161, 156, 0.06) 0, transparent 40%);
+                radial-gradient(at 15% 0%, rgba(6, 182, 212, 0.07) 0, transparent 40%), 
+                radial-gradient(at 85% 100%, rgba(36, 161, 156, 0.05) 0, transparent 40%);
             background-attachment: fixed;
         }
 
-        /* Zero-Glare Glass Panel Layers */
+        /* Zero-Glare Glass Panel Layers matching main studio layout */
         .glass-card {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.01);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glass-card:hover { 
             border-color: rgba(6, 182, 212, 0.25); 
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
         }
-
-        /* HERO GRAPHIC: RESTORED & SCALED PULSATING WAVES 
-           Simulates multi-frame video synthesis pipeline tracks */
-        .wave-container {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            height: 64px;
-        }
-        .wave-slice {
-            width: 4px;
-            background: linear-gradient(180deg, var(--nv-accent-studio), #3b82f6);
-            border-radius: var(--radius-full);
-            box-shadow: 0 0 12px var(--nv-accent-studio);
-            animation: wave-pulse 1.8s infinite ease-in-out;
-        }
-        @keyframes wave-pulse {
-            0%, 100% { transform: scaleY(0.4); opacity: 0.3; }
-            50% { transform: scaleY(1.3); opacity: 1; box-shadow: 0 0 20px var(--nv-accent-studio); }
-        }
-
-        @keyframes flow-pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.7; } }
-        .animate-flow { animation: flow-pulse 4s infinite; }
     </style>
 </head>
-<body class="bg-mesh">
-
-    <nav class="fixed top-0 w-full z-50 p-6 md:px-12 flex justify-between items-center backdrop-blur-md border-b border-white/5">
-        <div class="brand-text text-xl lowercase font-medium tracking-tighter text-white">narrabrain.studio</div>
-        <div class="glass-card px-5 py-2 rounded-full mono text-xs tracking-widest uppercase text-cyan-400 font-bold">stealth mode</div>
-    </nav>
-
-    <main class="pt-48 pb-20 px-6">
+<body class="bg-mesh p-8 md:p-24">
+    <div class="max-w-3xl mx-auto">
         
-        <section class="max-w-4xl mx-auto text-center mb-20">
-            
-            <div class="relative inline-block mb-16">
-                <div class="absolute inset-0 bg-cyan-500/15 blur-[80px] rounded-full animate-aura-pulse"></div>
-                
-                <div class="relative z-10 wave-container px-8 py-4 rounded-2xl border" style="background-color: rgba(18, 18, 20, 0.4); border-color: rgba(255,255,255,0.03);">
-                    <div class="wave-slice h-6" style="animation-delay: 0.0s;"></div>
-                    <div class="wave-slice h-10" style="animation-delay: 0.2s;"></div>
-                    <div class="wave-slice h-14" style="animation-delay: 0.4s;"></div>
-                    <div class="wave-slice h-8" style="animation-delay: 0.6s;"></div>
-                    <div class="wave-slice h-12" style="animation-delay: 0.8s;"></div>
-                    <div class="wave-slice h-16" style="animation-delay: 1.0s;"></div>
-                    <div class="wave-slice h-10" style="animation-delay: 1.2s;"></div>
-                    <div class="wave-slice h-14" style="animation-delay: 1.4s;"></div>
-                    <div class="wave-slice h-6" style="animation-delay: 1.6s;"></div>
-                </div>
-            </div>
+        <nav class="mb-16">
+            <a href="/" class="text-cyan-500 mono text-xs uppercase tracking-widest hover:text-white transition-colors">← back to narrabrain.studio</a>
+        </nav>
 
-            <h1 class="text-white text-5xl display-title tracking-tight leading-tight mb-8">
-                Solving <span class="text-cyan-400 italic">Production Friction</span>.
-            </h1>
-            <p class="text-base md:text-xl font-light max-w-2xl mx-auto leading-relaxed" style="color: var(--nv-text-muted);">
-                An agentic orchestration layer for high-fidelity synthesis via modified open-source cinematic backends.
-            </p>
-        </section>
-
-        <div class="flow-line animate-flow" style="height: 40px; margin-bottom: 20px;"></div>
-
-        <section class="max-w-3xl mx-auto mb-8">
-            <div class="glass-card p-10 md:p-14 rounded-3xl text-center" style="border-radius: 32px;">
-                <span class="mono text-xs uppercase block mb-6" style="color: var(--nv-accent-studio);">Stage 01: Intent Orchestration</span>
-                <div class="border p-6 rounded-2xl mb-8 text-base md:text-base italic font-light" style="background-color: var(--nv-bg-canvas); border-color: var(--nv-bg-element); color: var(--nv-text-muted);">
-                    "Open with a tracking shot of the protagonist, maintain 50mm depth of field, sunset lighting."
-                </div>
-                <h3 class="text-white text-2xl font-medium mb-3 display-title">Directorial Input Parsing</h3>
-                <p class="text-base leading-relaxed" style="color: var(--nv-text-muted);">Translating narrative vision into deterministic camera and lighting vectors.</p>
-            </div>
-        </section>
-
-        <div class="flow-line"></div>
-
-        <section class="max-w-5xl mx-auto mb-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="glass-card p-10 rounded-3xl" style="border-radius: 32px; border-l: 3px solid rgba(6, 182, 212, 0.4);">
-                <span class="mono text-xs uppercase block mb-4" style="color: var(--nv-accent-studio);">Stage 02: Synthesis Logic</span>
-                <h3 class="text-white text-2xl font-medium mb-4 display-title">SCLC Directorial Core</h3>
-                <p class="text-base leading-relaxed font-light" style="color: var(--nv-text-muted);">
-                    Managing scene logic, character weight, and environmental physics to ensure synthesis adheres to directorial standards.
-                </p>
-            </div>
-            <div class="glass-card p-10 rounded-3xl" style="border-radius: 32px; border-r: 3px solid rgba(6, 182, 212, 0.4);">
-                <span class="mono text-xs uppercase block mb-4" style="color: var(--nv-accent-studio);">Stage 03: Persistence</span>
-                <h3 class="text-white text-2xl font-medium mb-4 display-title">Temporal Anchoring (URIG)</h3>
-                <p class="text-base leading-relaxed font-light" style="color: var(--nv-text-muted);">
-                    Utilizing relational graphs to enforce object and entity consistency across multiple generated sequences.
-                </p>
-            </div>
-        </section>
-
-        <div class="flow-line"></div>
-
-        <section class="max-w-3xl mx-auto mb-8">
-            <div class="glass-card p-10 md:p-14 rounded-3xl text-center style-border-dashed" style="border-radius: 32px; border-style: dashed; border-color: rgba(6, 182, 212, 0.15);">
-                <span class="mono text-xs uppercase block mb-6" style="color: var(--nv-accent-studio);">Stage 04: Pixel Synthesis</span>
-                <h3 class="text-white text-2xl font-medium mb-6 display-title">Open-Source Orchestration</h3>
-                <div class="flex justify-center items-center gap-6 text-xs mono italic mb-6" style="color: var(--nv-text-muted);">
-                    <span>Weights Fine-Tuning</span>
-                    <span class="text-cyan-500 text-base">→</span>
-                    <span>Frame Infilling</span>
-                </div>
-                <p class="text-base leading-relaxed font-light" style="color: var(--nv-text-muted);">
-                    Orchestrating modified high-performance open-source backends via proprietary directorial weight distribution.
-                </p>
-            </div>
-        </section>
-
-        <div class="flow-line"></div>
-
-        <section class="max-w-3xl mx-auto mb-20">
-            <div class="glass-card p-10 md:p-14 rounded-3xl" style="border-radius: 32px; border-top: 3px solid rgba(255,255,255,0.08);">
-                <span class="mono text-xs uppercase block mb-6 text-center" style="color: var(--nv-accent-studio);">Stage 05: Final Fulfillment</span>
-                <h3 class="text-white text-2xl font-medium mb-8 text-center display-title">Narrative Integrity Export</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                    <div class="p-4 rounded-xl text-center border" style="background-color: var(--nv-bg-surface); border-color: rgba(255,255,255,0.03); border-radius: 12px;">
-                        <p class="text-xs mono uppercase mb-2" style="color: var(--nv-text-muted);">Backend</p>
-                        <p class="text-base text-white font-medium">Modified OS</p>
-                    </div>
-                    <div class="p-4 rounded-xl text-center border" style="background-color: var(--nv-bg-surface); border-color: rgba(255,255,255,0.03); border-radius: 12px;">
-                        <p class="text-xs mono uppercase mb-2" style="color: var(--nv-text-muted);">Consistency</p>
-                        <p class="text-base text-white font-medium">Verified</p>
-                    </div>
-                    <div class="p-4 rounded-xl text-center border" style="background-color: var(--nv-bg-surface); border-color: rgba(255,255,255,0.03); border-radius: 12px;">
-                        <p class="text-xs mono uppercase mb-2" style="color: var(--nv-text-muted);">Metadata</p>
-                        <p class="text-base text-white font-medium">Embedded</p>
-                    </div>
-                    <div class="p-4 rounded-xl text-center border" style="background-color: var(--nv-bg-surface); border-color: rgba(255,255,255,0.03); border-radius: 12px;">
-                        <p class="text-xs mono uppercase mb-2" style="color: var(--nv-text-muted);">Provenance</p>
-                        <p class="text-base text-white font-medium">C2PA</p>
-                    </div>
-                </div>
-                <p class="text-xs font-light text-zinc-500 text-center italic">Delivering production-ready assets with complete directorial control.</p>
-            </div>
-        </section>
-
-        <section class="max-w-5xl mx-auto my-32">
-            <div class="glass-card p-10 md:p-16 rounded-[32px] relative overflow-hidden">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <div>
-                        <div class="flex items-center gap-4 mb-8">
-                            <div class="w-1 h-12 bg-white"></div>
-                            <div>
-                                <h2 class="text-white text-4xl display-title tracking-tight">Vibhav Nigam</h2>
-                                <p class="mono text-xs uppercase mt-1" style="color: var(--nv-accent-studio);">Founder & Solo Architect</p>
-                            </div>
-                        </div>
-                        <p class="mono text-[11px] leading-[2] uppercase text-left max-w-sm" style="color: var(--nv-text-muted);">
-                            Graduate of the Satyajit Ray Film & Television Institute. Jury Award recipient for excellence in editing. Nine years as a post-production specialist across feature films, web series, and commercial media.
-                        </p>
-                    </div>
-                    <div class="flex flex-col justify-center h-full">
-                        <p class="text-white text-base md:text-xl font-light italic leading-relaxed text-left border-l pl-8" style="border-color: rgba(255,255,255,0.08); color: var(--nv-text-primary);">
-                            "The architecture behind Narrabrain was designed from inside the edit bay — built by someone who spent years translating a director's intent into the exact frame, and who understood precisely why no machine could do what even a junior editor could."
-                        </p>
-                    </div>
-                </div>
-                <div class="mt-16 pt-8 border-t flex justify-between items-center" style="border-color: rgba(255,255,255,0.05);">
-                    <p class="mono text-[10px] uppercase" style="color: rgba(6, 182, 212, 0.5);">Patent Pending — Provisional Filed, May 2026</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="max-w-md mx-auto mt-20 glass-card p-12 md:p-16 rounded-[32px] text-center" style="border-top: 3px solid var(--nv-accent-studio);">
-            <h3 class="text-white text-2xl mb-10 lowercase tracking-tight display-title">join the studio waitlist</h3>
-            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
-                <input type="hidden" name="access_key" value="0e1f2a70-52f3-44dc-a3c5-769bea22bd3e">
-                <input type="email" name="email" placeholder="professional email" required class="w-full border rounded-2xl p-5 text-sm text-white focus:border-cyan-500 outline-none text-center" style="background-color: rgba(0, 0, 0, 0.4); border-color: var(--nv-bg-element);">
-                <div class="flex items-start gap-4 text-left px-2">
-                    <input type="checkbox" id="legal-consent" name="consent" required class="mt-1.5 w-4 h-4 rounded bg-black border-zinc-700 checked:bg-cyan-500 cursor-pointer">
-                    <label for="legal-consent" class="text-xs leading-normal" style="color: var(--nv-text-muted);">
-                        I agree to the <a href="/privacy" class="text-zinc-300 underline hover:text-cyan-400 transition-colors">Privacy Policy</a> and <a href="/terms" class="text-zinc-300 underline hover:text-cyan-400 transition-colors">Terms of Service</a>.
-                    </label>
-                </div>
-                <button type="submit" class="w-full bg-white text-black py-5 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-cyan-400 transition-all" style="border-radius: 12px;">Request Access</button>
-            </form>
-        </section>
-    </main>
-
-    <footer class="p-16 border-t glass-card rounded-none text-center" style="border-color: rgba(255,255,255,0.05);">
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <p class="mono text-[10px] uppercase" style="color: var(--nv-accent-studio);">© 2026, Narrabrain Labs Pvt Ltd</p>
-            <div class="flex flex-wrap justify-center gap-8 mono text-xs uppercase tracking-widest">
-                <a href="mailto:info@narrabrain.studio" class="text-zinc-500 hover:text-cyan-400 transition-colors lowercase tracking-normal">info@narrabrain.studio</a>
-                <a href="/privacy" style="color: var(--nv-text-muted);" class="hover:text-cyan-400 transition-colors">Privacy</a>
-                <a href="/terms" style="color: var(--nv-text-muted);" class="hover:text-cyan-400 transition-colors">Terms</a>
-            </div>
+        <div class="relative w-full h-24 flex items-center justify-center overflow-hidden mb-6 select-none pointer-events-none">
+            <svg class="absolute w-full max-w-xl h-full opacity-20" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="20" x2="400" y2="20" stroke="#2B2D31" stroke-width="0.75" stroke-dasharray="2 4" />
+                <line x1="0" y1="50" x2="400" y2="50" stroke="#1E1F22" stroke-width="1" />
+                <line x1="0" y1="80" x2="400" y2="80" stroke="#2B2D31" stroke-width="0.75" stroke-dasharray="2 4" />
+                <line x1="80" y1="0" x2="80" y2="100" stroke="#1E1F22" stroke-width="1" />
+                <line x1="200" y1="0" x2="200" y2="100" stroke="#2B2D31" stroke-width="0.75" stroke-dasharray="4 4" />
+                <line x1="320" y1="0" x2="320" y2="100" stroke="#1E1F22" stroke-width="1" />
+                <path d="M 10 50 Q 100 20 200 50 T 390 50" stroke="#949BA4" stroke-width="1" stroke-opacity="0.2" />
+                <circle cx="80" cy="30" r="1.5" fill="#2B2D31" />
+                <circle cx="320" cy="70" r="1.5" fill="#2B2D31" />
+                <circle cx="200" cy="50" r="2.5" fill="#477BFF" fill-opacity="0.6" />
+            </svg>
         </div>
-    </footer>
+
+        <header class="mb-20 text-center md:text-left">
+            <h1 class="text-white text-4xl display-title tracking-tighter mb-4 lowercase">terms of service</h1>
+            <p class="mono text-[10px] text-zinc-600 uppercase tracking-[0.3em]">Module: .studio | Intermediary Guidelines | Updated May 2026</p>
+        </header>
+
+        <div class="space-y-16 text-sm md:text-base leading-relaxed font-light">
+            
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">1. Acceptance of Terms & Entity</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">By accessing narrabrain.studio, you agree to these Terms of Service issued by <strong class="text-zinc-200 font-medium">Narrabrain Labs Private Limited</strong> (CIN: U63111MH2026PTC471492). These terms govern your use of our AI video synthesis platform and are governed by Indian law.</p>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">2. Service Description & Technology</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Narrabrain.studio is an orchestration and creative direction layer for video synthesis that leverages modified open-source generative models. We do not create the underlying pixel generation models; rather, we provide a proprietary <strong class="text-zinc-200 font-medium">Shared Contextual Logic Core (SCLC)</strong> and <strong class="text-zinc-200 font-medium">Narrative Delta Reinforcement Logic (NDRL)</strong> that optimize creative direction, temporal consistency, and narrative coherence.</p>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">3. Synthesis License & Ownership</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Regarding synthesized video content generated through narrabrain.studio:</p>
+                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
+                    <li><strong class="text-zinc-200">Ownership:</strong> You retain full ownership of the synthesized video assets generated from your directorial prompts</li>
+                    <li><strong class="text-zinc-200">License Grant:</strong> You are granted a worldwide, non-exclusive, royalty-free license to use synthesized content for personal, non-commercial purposes</li>
+                    <li><strong class="text-zinc-200">Commercial Use:</strong> Commercial distribution, licensing, or monetization of synthesized videos requires explicit written consent and a separate commercial license agreement</li>
+                    <li><strong class="text-zinc-200">Modification Rights:</strong> You may edit, modify, or adapt synthesized videos for personal use. Commercial modification requires additional licensing</li>
+                    <li><strong class="text-zinc-200">Our IP:</strong> Narrabrain Labs retains ownership of the SCLC Engine, NDRL, Directorial Weights, and all proprietary orchestration technology. These may not be reverse-engineered, extracted, or used to create competing services</li>
+                </ul>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">4. Prohibited Content & Ethical Usage</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">You are strictly prohibited from using narrabrain.studio to synthesize:</p>
+                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
+                    <li>Non-consensual intimate imagery, deepfakes, or synthetic media depicting real individuals without explicit written consent</li>
+                    <li>Content designed to spread misinformation, disinformation, or false information that could harm public interest or election integrity</li>
+                    <li>Content violating the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021</li>
+                    <li>Illegal content, child exploitation material, or content depicting violence or harm</li>
+                    <li>Content that defames, harasses, or violates the intellectual property or privacy rights of others</li>
+                    <li>Content impersonating real individuals, organizations, or public figures without consent</li>
+                    <li>Content designed to manipulate public opinion through synthetic media without proper disclosure</li>
+                </ul>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed mt-3">Violations will result in immediate account suspension and potential legal action. Narrabrain Labs reserves the right to report violations to appropriate legal authorities.</p>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">5. AI Generation Transparency & Disclosure</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">You agree to:</p>
+                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
+                    <li>All synthesized videos include cryptographic C2PA metadata identifying the content as AI-generated with generation timestamp</li>
+                    <li>When publicly distributing synthesized content, you must clearly disclose that it was created using AI video synthesis technology</li>
+                    <li>For content depicting real individuals or events, you must obtain written consent and clearly label the content as synthetic</li>
+                    <li>You may not remove, alter, or obscure C2PA provenance metadata that identifies content as AI-generated</li>
+                </ul>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">6. Technical Limitations & Probabilistic Nature</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed"><strong class="text-zinc-200 font-medium">Important:</strong> While our Temporal Anchoring (URIG) technology aims to maintain character persistence and narrative coherence, video synthesis is fundamentally probabilistic. We do not guarantee:</p>
+                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
+                    <li>100% photorealistic or cinematically perfect output for every frame</li>
+                    <li>Perfect narrative accuracy or logical consistency across all generated sequences</li>
+                    <li>Absence of visual artifacts, glitches, or anomalies in synthesized video</li>
+                    <li>Specific output quality, resolution, or aesthetic adherence to your directorial intent</li>
+                    <li>Consistency across multiple generation attempts of the same prompt</li>
+                </ul>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed mt-3">Video synthesis remains an evolving technology. Output quality depends on input prompts, model capabilities, and inherent computational limitations.</p>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">7. User Conduct & Responsibilities</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">By using narrabrain.studio, you agree to:</p>
+                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
+                    <li>Provide accurate and truthful information in directorial prompts and account details</li>
+                    <li>Obtain all necessary permissions and consents before synthesizing content depicting real individuals</li>
+                    <li>Use synthesized content in compliance with applicable laws and regulations</li>
+                    <li>Not attempt to circumvent content moderation or safety measures</li>
+                    <li>Not use automated tools, bots, or scripts to overload or attack the platform</li>
+                    <li>Accept full responsibility for how you use and distribute synthesized videos</li>
+                </ul>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">8. Liability Disclaimer & Indemnification</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Narrabrain Labs is not responsible for:</p>
+                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
+                    <li>Quality, accuracy, or aesthetics of synthesized video output</li>
+                    <li>Copyright infringement, defamation, or privacy violations arising from generated content</li>
+                    <li>Misuse of synthesized media by the user or third parties</li>
+                    <li>Service interruptions, data loss, or computational errors</li>
+                    <li>Damage caused by unauthorized use of accounts or credentials</li>
+                    <li>Third-party claims related to synthesized content creation or distribution</li>
+                </ul>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed mt-3"><strong class="text-zinc-200 font-medium">Indemnification:</strong> You agree to indemnify and hold harmless Narrabrain Labs, its officers, employees, and agents from any claims, damages, or liabilities arising from your use of the platform or your creation and distribution of synthesized content.</p>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">9. Intermediary Compliance & Content Takedown (IT Rules 2021)</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">As a synthetic media intermediary platform, Narrabrain Labs complies with the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021:</p>
+                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
+                    <li>We maintain a <strong class="text-zinc-200 font-medium">3-hour response window</strong> for government-mandated takedowns of prohibited, illegal, or flagged content</li>
+                    <li>Users can report violations via our Grievance Officer with supporting evidence</li>
+                    <li>We reserve the right to suspend or terminate accounts that repeatedly violate content policies</li>
+                    <li>We do not pre-screen or censor user-generated directorial prompts, but will act on specific violation reports</li>
+                </ul>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">10. Service Modifications & Availability</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Narrabrain.studio is provided "as-is" without guarantees of uptime or uninterrupted access. We reserve the right to:</p>
+                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
+                    <li>Modify, update, or discontinue features with reasonable notice</li>
+                    <li>Change pricing, subscription terms, or service access levels</li>
+                    <li>Suspend or terminate service for maintenance, security, or policy violations</li>
+                </ul>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed mt-3">Material changes to these terms will be communicated via email at least 30 days in advance. Continued use constitutes acceptance of updated terms.</p>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">11. Account Termination & Suspension</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Narrabrain Labs may immediately suspend or terminate your account if you:</p>
+                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
+                    <li>Violate any provision of these Terms of Service</li>
+                    <li>Create prohibited content (deepfakes, misinformation, illegal material)</li>
+                    <li>Attempt to circumvent safety measures or reverse-engineer our technology</li>
+                    <li>Engage in abusive, threatening, or harassing conduct</li>
+                </ul>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed mt-3">Upon termination, your access is revoked immediately. Previously generated videos remain your property but cannot be regenerated.</p>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">12. Grievance Redressal Officer</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">For content moderation requests, copyright claims, deepfake reports, or policy violations under IT Rules 2021:</p>
+                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
+                    <li><strong class="text-zinc-200">Grievance Officer:</strong> Vibhav Nigam, Founder</li>
+                    <li><strong class="text-zinc-200">Email:</strong> <a href="mailto:info@narrabrain.io" class="text-cyan-500 hover:text-cyan-400 transition-colors">info@narrabrain.io</a></li>
+                    <li><strong class="text-zinc-200">Subject:</strong> [GRIEVANCE] or [TAKEDOWN REQUEST]</li>
+                    <li><strong class="text-zinc-200">Response Commitment:</strong> We commit to reviewing and responding to all complaints within 5 business days (or 3 hours for government-mandated takedowns)</li>
+                </ul>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">13. Dispute Resolution & Governing Law</h2>
+                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">These Terms of Service are governed by the laws of India. Any disputes arising from your use of narrabrain.studio shall be resolved through binding arbitration under the Arbitration and Conciliation Act, 1996, with proceedings conducted in Mumbai, India. Both parties waive the right to litigation and agree that arbitration is the sole remedy for disputes.</p>
+            </section>
+        </div>
+
+        <footer class="mt-32 pt-12 border-t border-white/5 text-center">
+            <p class="mono text-[10px] text-cyan-500 uppercase tracking-widest">© 2026, Narrabrain Labs Pvt Ltd</p>
+        </footer>
+    </div>
 </body>
 </html>
