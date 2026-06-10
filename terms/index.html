@@ -52,7 +52,7 @@
             background: rgba(255, 255, 255, 0.025);
         }
 
-        /* Standardized dot styling for identical sizes */
+        /* Perfectly consistent custom bullet dots */
         .custom-bullet::before {
             content: "•";
             color: rgba(6, 182, 212, 0.6);
@@ -82,7 +82,7 @@
             <div class="glass-card p-8 rounded-2xl border-l-2 border-l-cyan-500/40">
                 <div class="flex justify-between items-start mb-3">
                     <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mono">1. Acceptance of Terms & Entity</h2>
-                    <span class="text-[9px] bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-mono px-2 py-0.5 rounded tracking-widest uppercase">Legal Framework</span>
+                    <span class="text-[9px] bg-cyan-500/10 border border-cyan-500/20 God text-cyan-400 font-mono px-2 py-0.5 rounded tracking-widest uppercase">Legal Framework</span>
                 </div>
                 <p class="text-sm md:text-base text-zinc-300 font-light leading-relaxed">
                     By accessing narrabrain.studio, you agree to these Terms of Service issued by <strong class="text-white font-medium">Narrabrain Labs Private Limited</strong> (CIN: U63111MH2026PTC471492). These terms govern your use of our AI video synthesis platform and are strictly governed by Indian law.
@@ -104,21 +104,21 @@
                     <li class="custom-bullet"><strong class="text-zinc-200 font-medium">License Grant:</strong> You are granted a worldwide, non-exclusive, royalty-free license to use synthesized content for personal, non-commercial purposes.</li>
                     <li class="custom-bullet"><strong class="text-zinc-200 font-medium">Commercial Use:</strong> Commercial distribution, licensing, or monetization of synthesized videos requires explicit written consent and a separate commercial license agreement.</li>
                     <li class="custom-bullet"><strong class="text-zinc-200 font-medium">Modification Rights:</strong> You may edit, modify, or adapt synthesized videos for personal use. Commercial modification requires additional licensing.</li>
-                    <li class="custom-bullet"><strong class="text-zinc-200 font-medium">Our IP:</strong> Narrabrain Labs retains ownership of the SCLC Engine, NDRL, Directorial Weights, and all proprietary orchestration technology.</li>
+                    <li class="custom-bullet"><strong class="text-zinc-200 font-medium">Our IP:</strong> Narrabrain Labs retains ownership of the SCLC Engine, NDRL, Directorial Weights, and all proprietary orchestration technology. These may not be reverse-engineered or extracted.</li>
                 </ul>
             </section>
 
             <section class="glass-card p-8 rounded-2xl">
                 <div class="flex items-center justify-between mb-4">
                     <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mono">4. Prohibited Content & Ethical Usage</h2>
-                    <span class="text-[10px] text-red-400/70 uppercase tracking-wider font-mono">Strict Restriction</span>
+                    <span class="text-[10px] text-red-400/70 uppercase tracking-wider font-mono">Restrictions</span>
                 </div>
                 <p class="text-sm text-zinc-400 font-light mb-4">You are strictly prohibited from using narrabrain.studio to synthesize:</p>
                 <ul class="text-sm text-zinc-400 font-light space-y-2 pl-4 border-b border-white/5 pb-4 mb-4">
-                    <li class="custom-bullet">Deepfakes or synthetic media depicting real individuals without consent.</li>
-                    <li class="custom-bullet">Content designed to spread misinformation affecting election integrity.</li>
-                    <li class="custom-bullet">Media violating India's IT Intermediary Guidelines Rules, 2021.</li>
-                    <li class="custom-bullet">Illegal content, child exploitation material, or depiction of violence.</li>
+                    <li class="custom-bullet">Non-consensual intimate imagery, deepfakes, or synthetic media depicting real individuals without explicit written consent.</li>
+                    <li class="custom-bullet">Content designed to spread misinformation, disinformation, or false information that could harm public interest or election integrity.</li>
+                    <li class="custom-bullet">Content violating the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021.</li>
+                    <li class="custom-bullet">Illegal content, child exploitation material, or content depicting violence or harm.</li>
                 </ul>
                 <p class="text-xs text-zinc-500 font-light">Violations will result in immediate account suspension and potential legal action. Narrabrain Labs reserves the right to report violations directly to legal authorities.</p>
             </section>
@@ -126,10 +126,42 @@
             <section class="glass-card p-8 rounded-2xl">
                 <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 mono">5. AI Generation Transparency & Disclosure</h2>
                 <ul class="text-sm text-zinc-400 font-light space-y-3 pl-4">
-                    <li class="custom-bullet">All synthesized videos include cryptographic C2PA metadata identifying generation timestamps.</li>
-                    <li class="custom-bullet">When distributing content publicly, you must clearly disclose that it was created using AI video synthesis technology.</li>
-                    <li class="custom-bullet">You may not remove, alter, or obscure C2PA provenance metadata that identifies content origin.</li>
+                    <li class="custom-bullet">All synthesized videos include cryptographic C2PA metadata identifying the content as AI-generated with generation timestamp.</li>
+                    <li class="custom-bullet">When publicly distributing synthesized content, you must clearly disclose that it was created using AI video synthesis technology.</li>
+                    <li class="custom-bullet">For content depicting real individuals or events, you must obtain written consent and clearly label the content as synthetic.</li>
+                    <li class="custom-bullet">You may not remove, alter, or obscure C2PA provenance metadata that identifies content as AI-generated.</li>
                 </ul>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 mono">6. Technical Limitations & Probabilistic Nature</h2>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed mb-3">
+                    <strong class="text-zinc-200 font-medium">Important:</strong> While our Temporal Anchoring (URIG) technology aims to maintain character persistence and narrative coherence, video synthesis is fundamentally probabilistic. We do not guarantee:
+                </p>
+                <ul class="text-sm text-zinc-400 font-light space-y-2 pl-4">
+                    <li class="custom-bullet">100% photorealistic or cinematically perfect output for every frame.</li>
+                    <li class="custom-bullet">Perfect narrative accuracy or logical consistency across all generated sequences.</li>
+                    <li class="custom-bullet">Absence of visual artifacts, glitches, or anomalies in synthesized video.</li>
+                </ul>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 mono">7. User Conduct & Responsibilities</h2>
+                <p class="text-sm text-zinc-400 font-light mb-4">By using narrabrain.studio, you agree to:</p>
+                <ul class="text-sm text-zinc-400 font-light space-y-2 pl-4">
+                    <li class="custom-bullet">Provide accurate and truthful information in directorial prompts and account details.</li>
+                    <li class="custom-bullet">Obtain all necessary permissions and consents before synthesizing content depicting real individuals.</li>
+                    <li class="custom-bullet">Not attempt to circumvent content moderation or safety measures.</li>
+                    <li class="custom-bullet">Accept full responsibility for how you use and distribute synthesized videos.</li>
+                </ul>
+            </section>
+
+            <section class="glass-card p-8 rounded-2xl">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 mono">8. Liability Disclaimer & Indemnification</h2>
+                <p class="text-sm text-zinc-400 font-light mb-3">Narrabrain Labs is not responsible for the quality, accuracy, aesthetics, copyright infringement, defamation, or privacy violations arising from user-generated content.</p>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">
+                    <strong class="text-zinc-200 font-medium">Indemnification:</strong> You agree to indemnify and hold harmless Narrabrain Labs, its officers, employees, and agents from any claims, damages, or liabilities arising from your use of the platform or your creation and distribution of synthesized content.
+                </p>
             </section>
 
             <section class="glass-card p-8 rounded-2xl border-l-2 border-l-emerald-500/30">
@@ -140,46 +172,42 @@
                 <p class="text-sm text-zinc-400 font-light leading-relaxed mb-3">
                     As a synthetic media intermediary platform, Narrabrain Labs complies with the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021:
                 </p>
-                <ul class="text-sm text-zinc-400 font-light space-y-2 pl-4 mb-4">
-                    <li class="custom-bullet">We maintain a strict <strong class="text-emerald-400 font-medium">3-hour response window</strong> for government-mandated takedowns of prohibited or flagged content sequences.</li>
+                <ul class="text-sm text-zinc-400 font-light space-y-2 pl-4">
+                    <li class="custom-bullet">We maintain a strict <strong class="text-emerald-400 font-medium">3-hour response window</strong> for government-mandated takedowns of prohibited, illegal, or flagged content sequences.</li>
                     <li class="custom-bullet">Users can report violations via our Grievance Officer with supporting evidence.</li>
-                    <li class="custom-bullet">We do not pre-screen or censor user-generated prompts, but will act swiftly on specific violation reports.</li>
+                    <li class="custom-bullet">We reserve the right to suspend or terminate accounts that repeatedly violate content policies.</li>
                 </ul>
             </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <div class="glass-card p-6 rounded-2xl space-y-4">
-                    <div>
-                        <h3 class="text-cyan-400 text-xs font-mono tracking-widest uppercase mb-1">6. Technical Limitations</h3>
-                        <p class="text-xs text-zinc-400 font-light leading-relaxed">Video synthesis is probabilistic. We do not guarantee 100% photorealistic or frame-perfect narrative accuracy across multiple rendering sequences.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-cyan-400 text-xs font-mono tracking-widest uppercase mb-1">7. User Conduct</h3>
-                        <p class="text-xs text-zinc-400 font-light leading-relaxed">You agree to accept full civil responsibility for data processing inputs, directorial prompt legality, and overall distributed asset compliance.</p>
-                    </div>
-                </div>
+            <section class="glass-card p-8 rounded-2xl">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 mono">10. Service Modifications & Availability</h2>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">
+                    Narrabrain.studio is provided "as-is" without guarantees of uptime. We reserve the right to modify, update, or discontinue features with reasonable notice, as well as change pricing or subscription tiers. Material changes to terms will be communicated 30 days in advance.
+                </p>
+            </section>
 
-                <div class="glass-card p-6 rounded-2xl">
-                    <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">12. Grievance Officer</h2>
-                    <div class="space-y-2 text-xs font-light text-zinc-400">
-                        <div><strong class="text-zinc-300 font-medium">Officer:</strong> Vibhav Nigam, Founder</div>
-                        <div><strong class="text-zinc-300 font-medium">Email:</strong> <a href="mailto:info@narrabrain.io" class="text-cyan-400 hover:underline">info@narrabrain.io</a></div>
-                        <div><strong class="text-zinc-300 font-medium">Response Target:</strong> 5 business days standard (or 3 hours for statutory dynamic requests)</div>
-                    </div>
-                </div>
+            <section class="glass-card p-8 rounded-2xl">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 mono">11. Account Termination & Suspension</h2>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">
+                    Narrabrain Labs may immediately suspend or terminate your account if you violate any provision of these Terms of Service, create prohibited content, attempt to circumvent safety filters, or reverse-engineer our orchestration logic layers.
+                </p>
+            </section>
 
-            </div>
+            <section class="glass-card p-8 rounded-2xl">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 mono">12. Grievance Redressal Officer</h2>
+                <p class="text-sm text-zinc-400 font-light mb-4">For content moderation requests, copyright claims, deepfake reports, or policy violations under IT Rules 2021:</p>
+                <ul class="text-sm text-zinc-400 font-light space-y-2 pl-4">
+                    <li class="custom-bullet"><strong class="text-zinc-200 font-medium">Grievance Officer:</strong> Vibhav Nigam, Founder</li>
+                    <li class="custom-bullet"><strong class="text-zinc-200 font-medium">Email:</strong> <a href="mailto:info@narrabrain.io" class="text-cyan-400 hover:underline">info@narrabrain.io</a></li>
+                    <li class="custom-bullet"><strong class="text-zinc-200 font-medium">Subject Anchor:</strong> Use <code class="bg-white/5 px-1 rounded text-zinc-200">[GRIEVANCE]</code> or <code class="bg-white/5 px-1 rounded text-zinc-200">[TAKEDOWN REQUEST]</code></li>
+                </ul>
+            </section>
 
-            <section class="glass-card p-6 rounded-2xl text-xs font-light text-zinc-500 space-y-3">
-                <div>
-                    <h4 class="text-zinc-400 font-mono text-[10px] uppercase tracking-wider mb-1">8 & 11. Liabilities and Account Controls</h4>
-                    <p>Narrabrain Labs disclaims all liabilities regarding computational generation artifacting or third-party usage claims. We reserve the rights to adapt service availability or terminate platform access instantly upon pattern policy violations.</p>
-                </div>
-                <div>
-                    <h4 class="text-zinc-400 font-mono text-[10px] uppercase tracking-wider mb-1">13. Disputes & Governing Law</h4>
-                    <p>All legal actions or disputes fall exclusively under binding arbitration regulations in Mumbai, India, conducted in compliance with the Arbitration and Conciliation Act, 1996.</p>
-                </div>
+            <section class="glass-card p-8 rounded-2xl">
+                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 mono">13. Dispute Resolution & Governing Law</h2>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">
+                    These Terms of Service are governed exclusively by the laws of India. Any disputes arising from your use of narrabrain.studio shall be resolved through binding arbitration under the Arbitration and Conciliation Act, 1996, with proceedings conducted in Mumbai, India.
+                </p>
             </section>
 
         </div>
