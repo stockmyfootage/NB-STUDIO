@@ -270,13 +270,47 @@
         </section>
     </main>
 
-    <footer class="p-16 border-t glass-card rounded-none text-center" style="border-color: rgba(255,255,255,0.05);">
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <p class="mono text-[10px] uppercase" style="color: var(--nv-accent-studio);">© 2026, Narrabrain Labs Pvt Ltd</p>
-            <div class="flex flex-wrap justify-center gap-8 mono text-xs uppercase tracking-widest">
-                <a href="mailto:info@narrabrain.studio" class="text-zinc-500 hover:text-cyan-400 transition-colors lowercase tracking-normal">info@narrabrain.studio</a>
-                <a href="/privacy" style="color: var(--nv-text-muted);" class="hover:text-cyan-400 transition-colors">Privacy</a>
-                <a href="/terms" style="color: var(--nv-text-muted);" class="hover:text-cyan-400 transition-colors">Terms</a>
+      <footer class="p-8 md:p-12 border-t glass-panel mt-auto rounded-none border-x-0 border-b-0" style="border-color: rgba(255, 255, 255, 0.06); background: rgba(18, 18, 20, 0.4);">
+        <div class="max-w-6xl mx-auto">
+            <!-- Primary Legal Information -->
+            <div class="mb-8 pb-8 border-b" style="border-color: rgba(255, 255, 255, 0.05);">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <!-- Company Name & Registration -->
+                    <div class="space-y-3">
+                        <p class="text-white text-sm font-medium" style="letter-spacing: -0.02em; line-height: 1.4;">Narrabrain Labs<br/>Private Limited</p>
+                        <p class="mono text-[9px]" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">CIN: U63111MH2026PTC471492</p>
+                    </div>
+
+                    <!-- Registered Office -->
+                    <div class="space-y-2 col-span-1 md:col-span-2">
+                        <p class="text-xs" style="color: var(--nv-text-muted); line-height: 1.6;">
+                            Innov8 R-City, R City Offices, 4th Floor, North Wing, R City Mall, LBS Marg, Ghatkopar West, Mumbai – 400086, Maharashtra, India
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact & Links -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <!-- Contact Information -->
+                <div class="space-y-2 flex flex-col">
+                    <a href="mailto:hello@narrabrain.studio" class="text-xs transition-colors duration-300" style="color: var(--nv-text-muted); text-decoration: none;">
+                        Email: hello@narrabrain.in
+                    </a>
+                    <a href="mailto:founder@narrabrain.in" class="text-xs transition-colors duration-300" style="color: var(--nv-text-muted); text-decoration: none;">
+                        For Grievance Redressal:founder@narrabrain.in
+                    </a>
+                </div>
+
+                <!-- Footer Links & Copyright -->
+                <div class="flex flex-col items-start md:items-end space-y-2">
+                    <div class="flex flex-wrap gap-4 items-center mono text-xs" style="color: var(--nv-text-muted);">
+                        <a href="/privacy" class="hover:text-white transition-colors" style="text-decoration: none;">Privacy</a>
+                        <span style="color: rgba(255, 255, 255, 0.1);">|</span>
+                        <a href="/terms" class="hover:text-white transition-colors" style="text-decoration: none;">Terms</a>
+                    </div>
+                    <p class="mono text-[9px]" style="color: rgba(71, 123, 255, 0.4); letter-spacing: 0.15em;">© 2026 | Patent Pending</p>
+                </div>
             </div>
         </div>
     </footer>
