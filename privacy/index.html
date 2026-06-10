@@ -7,41 +7,82 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=fallback" rel="stylesheet">
     <style>
-        :root { 
-            --accent: #06b6d4; 
-            --bg: #000000; 
-            --text-muted: #949BA4;
+        /* NDS-V9 Design System Root Variables (Calibrated for Studio Module) */
+        :root {
+            /* Color Tokens */
+            --nv-bg-canvas: #000000;
+            --nv-bg-surface: #121214;
+            --nv-bg-element: #1E1F22;
+            --nv-text-primary: #E3E5E8;
+            --nv-text-muted: #949BA4;
+            --nv-accent-brand: #06b6d4; /* Studio Cyan */
+            --nv-accent-success: #24A19C;
+            --nv-accent-warning: #D18E34;
+            
+            /* Spacing Matrix */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            
+            /* Border Radius Scale */
+            --radius-xs: 2px;
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 8px;
+            --radius-xl: 12px;
+            --radius-2xl: 24px;
+            --radius-full: 9999px;
         }
-        
-        body { 
-            background: var(--bg); 
-            color: #a1a1aa; 
-            font-family: 'Inter', sans-serif; 
-            -webkit-font-smoothing: antialiased; 
+
+        /* Foundation Styles */
+        body {
+            background-color: var(--nv-bg-canvas);
+            color: var(--nv-text-primary);
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
         }
-        
+
+        /* Typography Scale */
+        .text-xs { font-size: 10px; line-height: 1.4; letter-spacing: 0.03em; font-family: 'Inter', sans-serif; }
+        .text-sm { font-size: 11px; line-height: 1.5; letter-spacing: 0.05em; font-family: 'Inter', sans-serif; }
+        .text-base { font-size: 12px; line-height: 1.5; letter-spacing: 0.02em; font-family: 'Inter', sans-serif; }
+        .text-md { font-size: 14px; line-height: 1.6; letter-spacing: 0.01em; font-family: 'Inter', sans-serif; }
+        .text-lg { font-size: 16px; line-height: 1.6; letter-spacing: 0; font-family: 'Inter', sans-serif; }
+        .text-xl { font-size: 18px; line-height: 1.5; letter-spacing: 0; font-family: 'Inter', sans-serif; }
+        .text-2xl { font-size: 20px; line-height: 1.4; letter-spacing: -0.01em; font-family: 'Inter', sans-serif; }
+        .text-3xl { font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; font-family: 'Playfair Display', serif; font-weight: 500; }
+        .text-4xl { font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; font-family: 'Playfair Display', serif; font-weight: 500; }
+
+        /* Display Typography */
         .display-title {
             font-family: 'Playfair Display', Georgia, serif;
             font-weight: 500;
+            letter-spacing: -0.05em;
+            color: var(--nv-text-primary);
         }
 
-        .mono { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+        /* Utility Classes */
+        .mono {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.2em;
         }
 
-        /* Unified .io Calibrated Ambient Background Mesh */
-        .bg-mesh {
-            background-image: 
-                radial-gradient(at 15% 0%, rgba(6, 182, 212, 0.07) 0, transparent 40%), 
-                radial-gradient(at 85% 100%, rgba(36, 161, 156, 0.05) 0, transparent 40%);
-            background-attachment: fixed;
+        .brand-text {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 500;
+            letter-spacing: -0.05em;
+            color: var(--nv-text-primary);
         }
 
-        /* Zero-Glare Glass Panel Layers matching main studio layout */
+        /* Glass Card Component */
         .glass-card {
             background: rgba(255, 255, 255, 0.01);
             backdrop-filter: blur(12px);
@@ -49,135 +90,237 @@
             border: 1px solid rgba(255, 255, 255, 0.03);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .glass-card:hover { 
-            border-color: rgba(6, 182, 212, 0.25); 
+
+        .glass-card:hover {
+            border-color: rgba(6, 182, 212, 0.25);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Elevation Shadows */
+        .elevation-0 { box-shadow: none; }
+        .elevation-1 { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
+        .elevation-2 { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); }
+        .elevation-3 { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); }
+        .elevation-4 { box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7); }
+
+        /* Flow Animations */
+        .flow-line {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(180deg, var(--nv-accent-brand), transparent);
+            margin: 0 auto;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--nv-accent-brand);
+            border-radius: var(--radius-full);
+            margin: 0 auto;
+            box-shadow: 0 0 15px var(--nv-accent-brand);
+        }
+
+        @keyframes flow-pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.9; }
+        }
+
+        .animate-flow {
+            animation: flow-pulse 4s infinite;
+        }
+
+        /* Background Mesh */
+        .bg-mesh {
+            background-image: 
+                radial-gradient(at 15% 0%, rgba(6, 182, 212, 0.07) 0, transparent 40%), 
+                radial-gradient(at 85% 100%, rgba(36, 161, 156, 0.05) 0, transparent 40%);
+            background-attachment: fixed;
+            background-color: var(--nv-bg-canvas);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .text-4xl { font-size: 28px; }
+            .text-3xl { font-size: 22px; }
         }
     </style>
 </head>
-<body class="bg-mesh p-8 md:p-24">
-    <div class="max-w-3xl mx-auto">
+<body class="bg-mesh">
+
+    <nav class="fixed top-0 w-full z-50 px-6 md:px-12 py-6 flex justify-between items-center backdrop-blur-md border-b elevation-1" style="border-color: rgba(255, 255, 255, 0.04); background: rgba(0, 0, 0, 0.8);">
+        <a href="/" class="brand-text text-lg" style="letter-spacing: -0.05em; text-decoration: none;">narrabrain.studio</a>
+        <a href="/" class="glass-card px-5 py-2 rounded-full mono text-xs tracking-widest font-bold transition-all duration-300 hover:text-white" style="color: var(--nv-accent-brand); text-decoration: none;">
+            ← back to site
+        </a>
+    </nav>
+
+    <main class="pt-48 pb-20 px-6">
         
-        <nav class="mb-16">
-            <a href="/" class="text-cyan-500 mono text-xs uppercase tracking-widest hover:text-white transition-colors">← back to narrabrain.studio</a>
-        </nav>
+        <section class="max-w-4xl mx-auto text-center mb-12">
+            <h1 class="text-4xl md:text-5xl display-title mb-6" style="font-weight: 500; line-height: 1.2; text-transform: lowercase;">
+                privacy policy
+            </h1>
+            <p class="mono text-xs" style="color: var(--nv-text-muted); letter-spacing: 0.2em;">
+                Module: .studio | DPDP Act (India) | Updated May 2026
+            </p>
+        </section>
 
-        <header class="mb-20">
-            <h1 class="text-white text-4xl display-title tracking-tighter mb-4 lowercase">privacy policy</h1>
-            <p class="mono text-[10px] text-zinc-600 uppercase tracking-[0.3em]">Module: .studio | DPDP Act (India) | Updated May 2026</p>
-        </header>
+        <div class="dot animate-flow"></div>
+        <div class="flow-line animate-flow"></div>
 
-        <div class="space-y-16 text-sm md:text-base leading-relaxed font-light">
+        <section class="max-w-4xl mx-auto mb-16">
+            <div class="glass-card p-8 md:p-16 rounded-lg elevation-3 space-y-12" style="border-radius: 32px; border-top: 4px solid var(--nv-accent-brand);">
+                
+                <section>
+                    <h2 class="mono text-xs mb-4" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">1. Data Fiduciary & Entity</h2>
+                    <p class="text-sm md:text-base" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        <strong style="color: var(--nv-text-primary); font-weight: 500;">Narrabrain Labs Private Limited</strong> (CIN: U63111MH2026PTC471492), operated by Vibhav Nigam (Founder), acts as the Data Fiduciary for narrabrain.studio. This module processes creative inputs and synthesized outputs under the <strong style="color: var(--nv-text-primary); font-weight: 500;">Digital Personal Data Protection (DPDP) Act, 2023</strong>.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="mono text-xs mb-4" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">2. Data Collection & Processing</h2>
+                    <p class="text-sm md:text-base mb-3" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        Narrabrain.studio processes the following creative data to generate high-fidelity synthetic media:
+                    </p>
+                    <ul class="text-sm md:text-base list-disc list-inside space-y-2 pl-2" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Directorial Prompts:</strong> Textual, visual, and vector-based instructions used to orchestrate AI pixel synthesis and media generation</li>
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Narrative Parameters:</strong> Story arcs, character descriptions, emotional intent, and thematic direction</li>
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Creative Refinements:</strong> Iterative adjustments made to optimize output quality and narrative coherence</li>
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">System Logs:</strong> Technical metadata related to processing, performance, and error correction</li>
+                    </ul>
+                    <p class="text-sm md:text-base mt-4" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        This data is collected with your explicit consent and processed solely to generate your requested synthetic media and improve our Narrative Delta Reinforcement Logic (NDRL).
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="mono text-xs mb-4" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">3. Data Storage & Global Processing</h2>
+                    <p class="text-sm md:text-base mb-3" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        Your creative inputs and synthesis data are handled as follows:
+                    </p>
+                    <ul class="text-sm md:text-base list-disc list-inside space-y-2 pl-2" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Primary Storage:</strong> Creative inputs and user prompts are primarily stored within the Republic of India on secure cloud infrastructure (encrypted at-rest using industry-standard encryption protocols)</li>
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Processing Infrastructure:</strong> Video synthesis computation occurs on distributed cloud infrastructure across multiple global regions for redundancy, performance optimization, and disaster recovery purposes</li>
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Data Residency:</strong> While primary storage remains in India, processing and backup data may be temporarily stored or processed in other jurisdictions as necessary for technical operations. All such processing complies with Indian data localization requirements under the DPDP Act, 2023</li>
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Technical Access:</strong> Authorized technical personnel located in multiple countries may access anonymized technical logs and system performance data solely for infrastructure maintenance, debugging, model optimization, and security purposes</li>
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Model Training:</strong> Aggregated, anonymized insights from creative prompts may be used to refine future versions of our synthesis engine. Individual creative inputs will never be publicly shared</li>
+                    </ul>
+                    <p class="text-sm md:text-base mt-4" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        All cross-border data transfers are encrypted in-transit using industry-standard encryption protocols and comply with applicable data protection laws. Users can request details about specific processing locations by contacting our Grievance Officer.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="mono text-xs mb-4" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">4. Synthetic Output Ownership & Rights</h2>
+                    <p class="text-sm md:text-base mb-3" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        Regarding synthesized media generated through narrabrain.studio:
+                    </p>
+                    <ul class="text-sm md:text-base list-disc list-inside space-y-2 pl-2" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Ownership:</strong> You retain ownership of the generated video/media output</li>
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Provenance:</strong> All outputs include cryptographic C2PA metadata identifying the content as AI-generated and timestamped with generation date</li>
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">Attribution:</strong> You agree to disclose that content was generated using Narrabrain's technology when publicly distributed</li>
+                        <li><strong style="color: var(--nv-text-primary); font-weight: 500;">License:</strong> You are granted a personal, non-commercial license to use generated media. Commercial use requires explicit licensing agreement</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="mono text-xs mb-4" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">5. Prohibited Uses & Deepfake Prevention</h2>
+                    <p class="text-sm md:text-base mb-3" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        You agree not to use narrabrain.studio to:
+                    </p>
+                    <ul class="text-sm md:text-base list-disc list-inside space-y-2 pl-2" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        <li>Create non-consensual deepfakes or synthetic media impersonating real individuals without their written consent</li>
+                        <li>Generate content depicting illegal activities, violence, or harmful conduct</li>
+                        <li>Remove, alter, or obscure C2PA provenance metadata that identifies content as AI-generated</li>
+                        <li>Use synthesized media for fraud, deception, or misinformation</li>
+                        <li>Create content that violates others' intellectual property, privacy, or publicity rights</li>
+                        <li>Generate defamatory or harassing content</li>
+                    </ul>
+                    <p class="text-sm md:text-base mt-4" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        Violations will result in immediate account termination and potential legal action.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="mono text-xs mb-4" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">6. Data Retention & User Rights</h2>
+                    <p class="text-sm md:text-base mb-3" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        Under the DPDP Act, 2023, you have the right to:
+                    </p>
+                    <ul class="text-sm md:text-base list-disc list-inside space-y-2 pl-2" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        <li>Request access to your creative inputs and synthesis metadata</li>
+                        <li>Request erasure of your directorial prompts and inputs at any time</li>
+                        <li>Withdraw consent and discontinue platform use</li>
+                        <li>Request information about how your data was processed</li>
+                        <li>Opt-out of having your data used for model training improvements</li>
+                    </ul>
+                    <p class="text-sm md:text-base mt-4" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        <strong style="color: var(--nv-text-primary); font-weight: 500;">Data Retention:</strong> Your creative inputs are retained for the duration of your account. Generated outputs remain your property. Upon deletion request, inputs are permanently erased within 30 days; outputs remain yours to use but will not be regenerated using your original prompts.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="mono text-xs mb-4" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">7. Liability & Output Warranty</h2>
+                    <p class="text-sm md:text-base mb-3" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        Narrabrain Labs is not responsible for:
+                    </p>
+                    <ul class="text-sm md:text-base list-disc list-inside space-y-2 pl-2" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        <li>AI hallucinations, artifacts, or errors in synthesized output</li>
+                        <li>Copyright infringement claims arising from generated content</li>
+                        <li>Inaccuracies or misrepresentations in synthetic media</li>
+                        <li>Damage caused by misuse of outputs (e.g., deepfakes, fraud)</li>
+                        <li>Service interruptions or data loss</li>
+                    </ul>
+                    <p class="text-sm md:text-base mt-4" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        You assume full responsibility for how synthesized media is used and distributed.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="mono text-xs mb-4" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">8. Intellectual Property</h2>
+                    <p class="text-sm md:text-base" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        Our proprietary synthesis engine, including the <strong style="color: var(--nv-text-primary); font-weight: 500;">Shared Contextual Logic Core (SCLC)</strong>, <strong style="color: var(--nv-text-primary); font-weight: 500;">Narrative Delta Reinforcement Logic (NDRL)</strong>, and all underlying algorithms, are protected intellectual property. You may not reverse-engineer, decompile, or extract our technology.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="mono text-xs mb-4" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">9. Grievance Redressal</h2>
+                    <p class="text-sm md:text-base mb-3" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        For data concerns, misuse reports, or grievances under DPDP regulations:
+                    </p>
+                    <ul class="text-sm md:text-base space-y-2 pl-2" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        <li>• <strong style="color: var(--nv-text-primary); font-weight: 500;">Primary Contact:</strong> <a href="mailto:info@narrabrain.io" style="color: var(--nv-text-primary); text-decoration: underline; transition: color 0.3s;">info@narrabrain.io</a></li>
+                        <li>• <strong style="color: var(--nv-text-primary); font-weight: 500;">Grievance Officer:</strong> Vibhav Nigam, Founder — <a href="mailto:founder@narrabrain.in" style="color: var(--nv-text-primary); text-decoration: underline; transition: color 0.3s;">founder@narrabrain.in</a></li>
+                        <li>• <strong style="color: var(--nv-text-primary); font-weight: 500;">Response Commitment:</strong> We will review all complaints within 5 business days</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="mono text-xs mb-4" style="color: var(--nv-accent-brand); letter-spacing: 0.15em;">10. Policy Updates & Governing Law</h2>
+                    <p class="text-sm md:text-base" style="color: var(--nv-text-muted); line-height: 1.8; font-weight: 300;">
+                        This Privacy Policy is governed by Indian law and complies with the Digital Personal Data Protection Act, 2023. Material changes will be communicated via email at least 30 days in advance. Disputes shall be resolved through binding arbitration in Mumbai under the Arbitration and Conciliation Act, 1996.
+                    </p>
+                </section>
+
+            </div>
+        </section>
+
+        <div class="dot animate-flow"></div>
+        <div class="flow-line animate-flow"></div>
+
+    </main>
+
+    <footer class="p-12 md:p-16 border-t glass-card rounded-none elevation-1" style="border-color: rgba(255, 255, 255, 0.04); background: rgba(0, 0, 0, 0.4);">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="mono text-xs uppercase tracking-widest" style="color: var(--nv-accent-brand); margin: 0;">© 2026, Narrabrain Labs Pvt Ltd</p>
             
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">1. Data Fiduciary & Entity</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">
-                    <strong class="text-zinc-200 font-medium">Narrabrain Labs Private Limited</strong> (CIN: U63111MH2026PTC471492), operated by Vibhav Nigam (Founder), acts as the Data Fiduciary for narrabrain.studio. This module processes creative inputs and synthesized outputs under the <strong class="text-zinc-200 font-medium">Digital Personal Data Protection (DPDP) Act, 2023</strong>.
-                </p>
-            </section>
-
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">2. Data Collection & Processing</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Narrabrain.studio processes the following creative data to generate high-fidelity synthetic media:</p>
-                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
-                    <li><strong class="text-zinc-200">Directorial Prompts:</strong> Textual, visual, and vector-based instructions used to orchestrate AI pixel synthesis and media generation</li>
-                    <li><strong class="text-zinc-200">Narrative Parameters:</strong> Story arcs, character descriptions, emotional intent, and thematic direction</li>
-                    <li><strong class="text-zinc-200">Creative Refinements:</strong> Iterative adjustments made to optimize output quality and narrative coherence</li>
-                    <li><strong class="text-zinc-200">System Logs:</strong> Technical metadata related to processing, performance, and error correction</li>
-                </ul>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed mt-3">This data is collected with your explicit consent and processed solely to generate your requested synthetic media and improve our Narrative Delta Reinforcement Logic (NDRL).</p>
-            </section>
-
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">3. Data Storage & Global Processing</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Your creative inputs and synthesis data are handled as follows:</p>
-                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
-                    <li><strong class="text-zinc-200">Primary Storage:</strong> Creative inputs and user prompts are primarily stored within the Republic of India on secure cloud infrastructure (encrypted at-rest using industry-standard encryption protocols)</li>
-                    <li><strong class="text-zinc-200">Processing Infrastructure:</strong> Video synthesis computation occurs on distributed cloud infrastructure across multiple global regions for redundancy, performance optimization, and disaster recovery purposes</li>
-                    <li><strong class="text-zinc-200">Data Residency:</strong> While primary storage remains in India, processing and backup data may be temporarily stored or processed in other jurisdictions as necessary for technical operations. All such processing complies with Indian data localization requirements under the DPDP Act, 2023</li>
-                    <li><strong class="text-zinc-200">Technical Access:</strong> Authorized technical personnel located in multiple countries may access anonymized technical logs and system performance data solely for infrastructure maintenance, debugging, model optimization, and security purposes</li>
-                    <li><strong class="text-zinc-200">Model Training:</strong> Aggregated, anonymized insights from creative prompts may be used to refine future versions of our synthesis engine. Individual creative inputs will never be publicly shared</li>
-                </ul>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed mt-3">All cross-border data transfers are encrypted in-transit using industry-standard encryption protocols and comply with applicable data protection laws. Users can request details about specific processing locations by contacting our Grievance Officer.</p>
-            </section>
-
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">4. Synthetic Output Ownership & Rights</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Regarding synthesized media generated through narrabrain.studio:</p>
-                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
-                    <li><strong class="text-zinc-200">Ownership:</strong> You retain ownership of the generated video/media output</li>
-                    <li><strong class="text-zinc-200">Provenance:</strong> All outputs include cryptographic C2PA metadata identifying the content as AI-generated and timestamped with generation date</li>
-                    <li><strong class="text-zinc-200">Attribution:</strong> You agree to disclose that content was generated using Narrabrain's technology when publicly distributed</li>
-                    <li><strong class="text-zinc-200">License:</strong> You are granted a personal, non-commercial license to use generated media. Commercial use requires explicit licensing agreement</li>
-                </ul>
-            </section>
-
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">5. Prohibited Uses & Deepfake Prevention</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">You agree not to use narrabrain.studio to:</p>
-                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
-                    <li>Create non-consensual deepfakes or synthetic media impersonating real individuals without their written consent</li>
-                    <li>Generate content depicting illegal activities, violence, or harmful conduct</li>
-                    <li>Remove, alter, or obscure C2PA provenance metadata that identifies content as AI-generated</li>
-                    <li>Use synthesized media for fraud, deception, or misinformation</li>
-                    <li>Create content that violates others' intellectual property, privacy, or publicity rights</li>
-                    <li>Generate defamatory or harassing content</li>
-                </ul>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed mt-3">Violations will result in immediate account termination and potential legal action.</p>
-            </section>
-
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">6. Data Retention & User Rights</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Under the DPDP Act, 2023, you have the right to:</p>
-                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
-                    <li>Request access to your creative inputs and synthesis metadata</li>
-                    <li>Request erasure of your directorial prompts and inputs at any time</li>
-                    <li>Withdraw consent and discontinue platform use</li>
-                    <li>Request information about how your data was processed</li>
-                    <li>Opt-out of having your data used for model training improvements</li>
-                </ul>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed mt-3">
-                    <strong class="text-zinc-200">Data Retention:</strong> Your creative inputs are retained for the duration of your account. Generated outputs remain your property. Upon deletion request, inputs are permanently erased within 30 days; outputs remain yours to use but will not be regenerated using your original prompts.
-                </p>
-            </section>
-
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">7. Liability & Output Warranty</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Narrabrain Labs is not responsible for:</p>
-                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
-                    <li>AI hallucinations, artifacts, or errors in synthesized output</li>
-                    <li>Copyright infringement claims arising from generated content</li>
-                    <li>Inaccuracies or misrepresentations in synthetic media</li>
-                    <li>Damage caused by misuse of outputs (e.g., deepfakes, fraud)</li>
-                    <li>Service interruptions or data loss</li>
-                </ul>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed mt-3">You assume full responsibility for how synthesized media is used and distributed.</p>
-            </section>
-
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">8. Intellectual Property</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">Our proprietary synthesis engine, including the <strong class="text-zinc-200 font-medium">SCLC (Shared Contextual Logic Core)</strong>, <strong class="text-zinc-200 font-medium">NDRL (Narrative Delta Reinforcement Logic)</strong>, and all underlying algorithms, are protected intellectual property. You may not reverse-engineer, decompile, or extract our technology.</p>
-            </section>
-
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">9. Grievance Redressal</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">For data concerns, misuse reports, or grievances under DPDP regulations:</p>
-                <ul class="text-sm md:text-base text-zinc-400 font-light leading-relaxed list-disc list-inside ml-2 mt-2 space-y-2">
-                    <li><strong class="text-zinc-200">Primary Contact:</strong> <a href="mailto:info@narrabrain.io" class="text-cyan-500 hover:text-cyan-400 transition-colors">info@narrabrain.io</a></li>
-                    <li><strong class="text-zinc-200">Grievance Officer:</strong> Vibhav Nigam, Founder — <a href="mailto:founder@narrabrain.in" class="text-cyan-500 hover:text-cyan-400 transition-colors">founder@narrabrain.in</a></li>
-                    <li><strong class="text-zinc-200">Response Commitment:</strong> We will review all complaints within 5 business days</li>
-                </ul>
-            </section>
-
-            <section class="glass-card p-8 rounded-2xl" style="border-radius: 24px;">
-                <h2 class="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-3 mono">10. Policy Updates & Governing Law</h2>
-                <p class="text-sm md:text-base text-zinc-400 font-light leading-relaxed">This Privacy Policy is governed by Indian law and complies with the Digital Personal Data Protection Act, 2023. Material changes will be communicated via email at least 30 days in advance. Disputes shall be resolved through binding arbitration in Mumbai under the Arbitration and Conciliation Act, 1996.</p>
-            </section>
-
+            <div class="flex flex-wrap justify-center gap-8 mono text-xs uppercase tracking-widest">
+                <a href="mailto:hello@narrabrain.io" class="transition-colors duration-300" style="color: var(--nv-text-muted); text-decoration: none; letter-spacing: 0.1em;">hello@narrabrain.io</a>
+                <a href="/privacy" class="transition-colors duration-300" style="color: var(--nv-text-muted); text-decoration: none; letter-spacing: 0.05em;">Privacy</a>
+                <a href="/terms" class="transition-colors duration-300" style="color: var(--nv-text-muted); text-decoration: none; letter-spacing: 0.05em;">Terms</a>
+            </div>
         </div>
+    </footer>
 
-        <footer class="mt-32 pt-12 border-t border-white/5 text-center">
-            <p class="mono text-[10px] text-cyan-500 uppercase tracking-widest">© 2026, Narrabrain Labs Pvt Ltd</p>
-        </footer>
-    </div>
 </body>
 </html>
